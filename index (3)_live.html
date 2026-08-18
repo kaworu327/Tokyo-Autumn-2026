@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tokyo Autumn Trip</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            autumn: {
+              paper: '#F7F3EE',
+              card: '#FDFBF7',
+              ink: '#2C241B',
+              muted: '#8A7E6F',
+              line: '#E5DDD2',
+              accent: '#A67C52',
+              accentSoft: '#C4A484',
+              deep: '#1A1612'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #D4C9B8; border-radius: 20px; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.28s ease; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tab-btn.active {
+      color: #2C241B;
+      border-bottom-color: #2C241B;
+    }
+  </style>
+</head>
+<body class="bg-autumn-paper text-autumn-ink min-h-screen font-sans flex flex-col selection:bg-autumn-accent/20">
+
+  <!-- Sticky Header -->
+  <header class="sticky top-0 z-40 bg-autumn-paper/95 backdrop-blur-sm border-b border-autumn-line">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-xs tracking-[0.2em] uppercase text-autumn-muted font-medium">Tokyo</span>
+        <span class="text-autumn-line">·</span>
+        <span class="text-sm font-medium text-autumn-ink">Autumn Trip</span>
+      </div>
+      <div class="text-xs text-autumn-muted font-mono hidden sm:block">Minimal · Autumn palette</div>
+    </div>
+  </header>
+
+  <!-- Title -->
+  <section class="max-w-5xl mx-auto px-5 sm:px-8 pt-10 pb-6 w-full">
+    <div class="border-b border-autumn-line pb-8">
+      <h1 class="text-4xl sm:text-5xl font-light tracking-tight text-autumn-ink font-serif mb-3">
+        Tokyo <span class="italic font-normal">Autumn</span>
+      </h1>
+      <p class="text-autumn-muted text-base tracking-wide">
+        23–25 Sep · Digital travel vault · Itinerary · Restaurants · Shops · Brands · Size guide
+      </p>
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <nav class="max-w-5xl mx-auto px-5 sm:px-8 w-full sticky top-[57px] z-30 bg-autumn-paper/95 backdrop-blur-sm py-3">
+    <div class="flex space-x-1 sm:space-x-2 overflow-x-auto no-scrollbar border-b border-autumn-line pb-0">
+      <button onclick="switchTab('booking')" id="tab-booking" class="tab-btn active px-4 sm:px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide border-b-2 border-autumn-ink text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
+        Itinerary and Booking
+      </button>
+
+      <button onclick="switchTab('restaurants')" id="tab-restaurants" class="tab-btn px-4 sm:px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide border-b-2 border-transparent text-autumn-muted hover:text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
+        Restaurants
+      </button>
+      <button onclick="switchTab('shops')" id="tab-shops" class="tab-btn px-4 sm:px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide border-b-2 border-transparent text-autumn-muted hover:text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
+        Shops
+      </button>
+      <button onclick="switchTab('brands')" id="tab-brands" class="tab-btn px-4 sm:px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide border-b-2 border-transparent text-autumn-muted hover:text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
+        Brands
+      </button>
+      <button onclick="switchTab('size')" id="tab-size" class="tab-btn px-4 sm:px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide border-b-2 border-transparent text-autumn-muted hover:text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
+        Size guide
+      </button>
+    </div>
+  </nav>
+
+  <main class="flex-grow max-w-5xl mx-auto px-5 sm:px-8 py-8 w-full">
+
+    <!-- ===================== BOOKING AND HOTELS ===================== -->
+    <div id="content-booking" class="tab-content active space-y-12">
+
+      <!-- Hotels -->
+      <div>
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-semibold tracking-tight font-serif">Lodging Timeline</h2>
+          <span class="text-sm text-autumn-muted">1 Base Camp</span>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Tokyu Stay Shinjuku -->
+          <div class="bg-autumn-card border border-autumn-line rounded-2xl p-6 sm:p-8 hover:shadow-sm transition-shadow">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-start gap-4 mb-5">
+              <div>
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="px-2.5 py-1 text-[10px] tracking-widest uppercase font-bold bg-autumn-ink text-autumn-paper rounded">Nights 1–2</span>
+                  <span class="text-sm text-autumn-muted">Shinjuku</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-semibold text-autumn-ink">Tokyu Stay Shinjuku</h3>
+              </div>
+              <div class="text-left sm:text-right">
+                <span class="text-xs text-autumn-muted block mb-0.5">Duration</span>
+                <p class="text-xl font-bold text-autumn-ink tracking-tight">23 Sep — 25 Sep</p>
+              </div>
+            </div>
+
+            <div class="mb-5 p-5 bg-autumn-paper rounded-xl border border-autumn-line/70">
+              <h4 class="text-[11px] font-bold uppercase tracking-wider text-autumn-muted mb-4 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-autumn-accent"></span>
+                Check-in / Check-out
+              </h4>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <p class="text-xs text-autumn-muted mb-1">Check-in</p>
+                  <p class="text-2xl font-bold text-autumn-ink tracking-tight">23 Sep</p>
+                </div>
+                <div>
+                  <p class="text-xs text-autumn-muted mb-1">Check-out</p>
+                  <p class="text-2xl font-bold text-autumn-ink tracking-tight">25 Sep</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://maps.app.goo.gl/abBZErVGYNmASEYG6" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-medium text-autumn-ink hover:underline">
+              Map <span class="text-xs">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Itinerary -->
+      <div>
+        <h2 class="text-xl font-semibold tracking-tight font-serif mb-6">Itinerary</h2>
+
+        <!-- Big group box for 23 Sep -->
+        <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-7">
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-autumn-line">
+            <h3 class="text-lg font-semibold tracking-tight">23 Sep</h3>
+            <span class="text-xs text-autumn-muted font-medium">Day 1 · estimated times · public transport</span>
+          </div>
+
+          <div class="space-y-0">
+
+            <!-- Travel: HND → Hotel (connector, no box) -->
+            <div class="flex gap-3 py-3 px-1">
+              <div class="flex flex-col items-center shrink-0 w-9">
+                <span class="text-lg leading-none">🚆</span>
+                <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+              </div>
+              <div class="flex-1 min-w-0 pb-2">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <p class="text-sm font-medium text-autumn-ink">HND Airport → Tokyu Stay Shinjuku</p>
+                  <p class="text-sm font-bold">Dep <span class="italic text-orange-500">06:00</span></p>
+                </div>
+                <p class="text-xs text-autumn-muted mt-0.5">≈ 45–55 min · Keikyu / Monorail + subway or Airport Limousine</p>
+                <a href="https://maps.app.goo.gl/iDtbT2yyekC8J1K68" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+              </div>
+            </div>
+
+            <!-- Destination: Hotel arrive 07:00 -->
+            <div class="bg-autumn-paper border border-autumn-line rounded-xl p-4 relative mb-1">
+              <div class="absolute top-4 right-4 text-right">
+                <p class="text-sm font-bold text-autumn-ink">23 Sep</p>
+                <p class="text-sm font-bold italic text-orange-500">07:00</p>
+              </div>
+              <div class="pr-20">
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Arrive · Hotel</span>
+                <h4 class="text-base font-semibold mt-1">Tokyu Stay Shinjuku</h4>
+                <a href="https://maps.app.goo.gl/abBZErVGYNmASEYG6" target="_blank" rel="noopener" class="inline-block mt-1.5 text-sm font-medium text-autumn-ink hover:underline">Map ↗</a>
+              </div>
+            </div>
+
+            <!-- Travel: Hotel → Skytree (connector) -->
+            <div class="flex gap-3 py-3 px-1">
+              <div class="flex flex-col items-center shrink-0 w-9">
+                <div class="w-px flex-1 min-h-[8px] bg-autumn-line mb-1"></div>
+                <span class="text-lg leading-none">🚆</span>
+                <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+              </div>
+              <div class="flex-1 min-w-0 pb-2">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <p class="text-sm font-medium text-autumn-ink">Tokyu Stay Shinjuku → Tokyo Skytree</p>
+                  <p class="text-sm font-bold">Dep ≈ <span class="italic text-orange-500">08:05</span></p>
+                </div>
+                <p class="text-xs text-autumn-muted mt-0.5">≈ 30–35 min · leave by ~08:05 to arrive 08:45</p>
+                <a href="https://maps.app.goo.gl/mhDqBzNh6DbTeZtUA" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+              </div>
+            </div>
+
+            <!-- Destination: Skytree Chiikawa — TO BE BOOKED -->
+            <div class="bg-autumn-paper border-2 border-orange-400 rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+              <div class="shrink-0 flex flex-col items-center gap-0.5 pt-1 text-xl leading-none" title="Chiikawa · Usagi · Hachiware · Kurimanju">
+                <span>🐹</span>
+                <span class="text-base">🐰</span>
+                <span class="text-base">🐱</span>
+                <span class="text-base">🌰</span>
+              </div>
+              <div class="flex-1 min-w-0 pr-16">
+                <div class="absolute top-4 right-4 text-right">
+                  <p class="text-sm font-bold text-autumn-ink">23 Sep</p>
+                  <p class="text-sm font-bold italic text-orange-500">08:45</p>
+                </div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Arrive · Skytree</span>
+                  <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-orange-100 text-orange-700 rounded">TO BE BOOKED</span>
+                </div>
+                <h4 class="text-base font-semibold">Tokyo Skytree — Chiikawa Expo</h4>
+                <p class="text-[11px] text-autumn-muted mt-0.5">Chiikawa · Usagi · Hachiware · Kurimanju</p>
+                <div class="flex flex-wrap gap-3 mt-1.5 text-sm">
+                  <a href="https://maps.app.goo.gl/75xAUCC15UQRcH3q7" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Venue map ↗</a>
+                  <a href="https://www.tokyo-skytree.jp/en/event/special/chiikawa/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Event info ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Travel: Skytree → LA BETTOLA (connector) -->
+            <div class="flex gap-3 py-3 px-1">
+              <div class="flex flex-col items-center shrink-0 w-9">
+                <div class="w-px flex-1 min-h-[8px] bg-autumn-line mb-1"></div>
+                <span class="text-lg leading-none">🚆</span>
+                <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+              </div>
+              <div class="flex-1 min-w-0 pb-2">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <p class="text-sm font-medium text-autumn-ink">Tokyo Skytree → LA BETTOLA da Ochiai</p>
+                  <p class="text-sm font-bold">Dep ≈ <span class="italic text-orange-500">12:35</span></p>
+                </div>
+                <p class="text-xs text-autumn-muted mt-0.5">≈ 30–35 min · subway via Asakusa / Ginza lines</p>
+                <a href="https://www.google.com/maps/dir/?api=1&origin=Tokyo+Skytree&destination=LA+BETTOLA+da+Ochiai+Ginza&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+              </div>
+            </div>
+
+            <!-- Destination: LA BETTOLA -->
+            <div class="bg-autumn-paper border-2 border-blue-400 rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+              <div class="shrink-0 text-3xl leading-none pt-0.5" title="Restaurant">🍽️</div>
+              <div class="flex-1 min-w-0 pr-16">
+                <div class="absolute top-4 right-4 text-right">
+                  <p class="text-sm font-bold text-autumn-ink">23 Sep</p>
+                  <p class="text-sm font-bold italic text-orange-500">13:15</p>
+                </div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Lunch</span>
+                <h4 class="text-base font-semibold mt-1">LA BETTOLA da Ochiai</h4>
+                <a href="https://maps.app.goo.gl/9YGHjrGCFNfRLrDN8" target="_blank" rel="noopener" class="inline-block mt-1.5 text-sm font-medium text-autumn-ink hover:underline">Map ↗</a>
+              </div>
+            </div>
+
+            <!-- Travel: LA BETTOLA → 中目黒 (connector) -->
+            <div class="flex gap-3 py-3 px-1">
+              <div class="flex flex-col items-center shrink-0 w-9">
+                <div class="w-px flex-1 min-h-[8px] bg-autumn-line mb-1"></div>
+                <span class="text-lg leading-none">🚆</span>
+                <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+              </div>
+              <div class="flex-1 min-w-0 pb-2">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <p class="text-sm font-medium text-autumn-ink">LA BETTOLA → 中目黒</p>
+                  <p class="text-sm font-bold">Dep ≈ <span class="italic text-orange-500">14:20</span></p>
+                </div>
+                <p class="text-xs text-autumn-muted mt-0.5">≈ 25–35 min · Hibiya / Toyoko area</p>
+                <a href="https://www.google.com/maps/dir/?api=1&origin=LA+BETTOLA+da+Ochiai+Ginza&destination=Nakameguro+Station&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+              </div>
+            </div>
+
+            <!-- Destination: Haircut — TO BE BOOKED -->
+            <div class="bg-autumn-paper border-2 border-orange-400 rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+              <div class="shrink-0 text-3xl leading-none pt-0.5" title="Haircut">💇</div>
+              <div class="flex-1 min-w-0 pr-24">
+                <div class="absolute top-4 right-4 text-right">
+                  <p class="text-sm font-bold text-autumn-ink">23 Sep</p>
+                  <p class="text-sm font-bold italic text-orange-500">15:00 – 17:00</p>
+                </div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Appointment · Haircut</span>
+                  <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-orange-100 text-orange-700 rounded">TO BE BOOKED</span>
+                </div>
+                <h4 class="text-base font-semibold">Haircut at 中目黒</h4>
+                <a href="https://www.google.com/maps/search/hair+salon+Nakameguro" target="_blank" rel="noopener" class="inline-block mt-1.5 text-sm font-medium text-autumn-ink hover:underline">Map area ↗</a>
+              </div>
+            </div>
+
+            <!-- Travel: 中目黒 → Shinjuku Isetan (connector) -->
+            <div class="flex gap-3 py-3 px-1">
+              <div class="flex flex-col items-center shrink-0 w-9">
+                <div class="w-px flex-1 min-h-[8px] bg-autumn-line mb-1"></div>
+                <span class="text-lg leading-none">🚆</span>
+                <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+              </div>
+              <div class="flex-1 min-w-0 pb-2">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <p class="text-sm font-medium text-autumn-ink">中目黒 → Shinjuku Isetan</p>
+                  <p class="text-sm font-bold">Dep ≈ <span class="italic text-orange-500">17:05</span></p>
+                </div>
+                <p class="text-xs text-autumn-muted mt-0.5">≈ 20–25 min · Toyoko → Fukutoshin or Yamanote via Meguro</p>
+                <a href="https://www.google.com/maps/dir/?api=1&origin=Nakameguro+Station&destination=Isetan+Shinjuku&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+              </div>
+            </div>
+
+            <!-- Destination: Shinjuku Isetan 17:30–20:00 -->
+            <div class="bg-autumn-paper border border-autumn-line rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+              <div class="shrink-0 text-3xl leading-none pt-0.5" title="Shopping">🛍️</div>
+              <div class="flex-1 min-w-0 pr-24">
+                <div class="absolute top-4 right-4 text-right">
+                  <p class="text-sm font-bold text-autumn-ink">23 Sep</p>
+                  <p class="text-sm font-bold italic text-orange-500">17:30 – 20:00</p>
+                </div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Shopping · Department store</span>
+                <h4 class="text-base font-semibold mt-1">Shinjuku Isetan</h4>
+                <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="inline-block mt-1.5 text-sm font-medium text-autumn-ink hover:underline">Map ↗</a>
+              </div>
+            </div>
+
+            <!-- Travel: Isetan → 焼肉ヒロミヤ (connector) -->
+            <div class="flex gap-3 py-3 px-1">
+              <div class="flex flex-col items-center shrink-0 w-9">
+                <div class="w-px flex-1 min-h-[8px] bg-autumn-line mb-1"></div>
+                <span class="text-lg leading-none">🚆</span>
+                <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+              </div>
+              <div class="flex-1 min-w-0 pb-2">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <p class="text-sm font-medium text-autumn-ink">Shinjuku Isetan → 焼肉ヒロミヤ 四谷</p>
+                  <p class="text-sm font-bold">Dep ≈ <span class="italic text-orange-500">20:00</span></p>
+                </div>
+                <p class="text-xs text-autumn-muted mt-0.5">≈ 10–15 min · walk / short subway to Yotsuya</p>
+                <a href="https://www.google.com/maps/dir/?api=1&origin=Isetan+Shinjuku&destination=%E7%84%BC%E8%82%89%E3%83%92%E3%83%AD%E3%83%9F%E3%83%A4+%E5%9B%9B%E8%B0%B74%E5%8F%B7%E5%BA%97&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+              </div>
+            </div>
+
+            <!-- Destination: 焼肉ヒロミヤ -->
+            <div class="bg-autumn-paper border-2 border-blue-400 rounded-xl p-4 relative flex gap-3 items-start">
+              <div class="shrink-0 text-3xl leading-none pt-0.5" title="Restaurant">🍽️</div>
+              <div class="flex-1 min-w-0 pr-16">
+                <div class="absolute top-4 right-4 text-right">
+                  <p class="text-sm font-bold text-autumn-ink">23 Sep</p>
+                  <p class="text-sm font-bold italic text-orange-500">20:30</p>
+                </div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Dinner</span>
+                <h4 class="text-base font-semibold mt-1">焼肉ヒロミヤ 四谷4号店</h4>
+                <a href="https://maps.app.goo.gl/qcmabGYmeqNvNyXN7" target="_blank" rel="noopener" class="inline-block mt-1.5 text-sm font-medium text-autumn-ink hover:underline">Map ↗</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===================== RESTAURANTS ===================== -->
+    <div id="content-restaurants" class="tab-content space-y-10">
+      <div class="border-b border-autumn-line pb-5">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight font-serif">Restaurants</h2>
+        <p class="text-autumn-muted mt-1 text-sm">Curated list with Tabelog ratings · Map &amp; Tabelog links included</p>
+      </div>
+
+      <div class="space-y-8">
+
+        <!-- ========== RAMEN (Orange) ========== -->
+        <section>
+          <div class="bg-autumn-card border-2 border-orange-400 rounded-2xl p-6 sm:p-7">
+            <div class="flex justify-between items-start mb-5">
+              <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Ramen</span>
+              <span class="px-2 py-0.5 text-xs font-bold bg-orange-100 text-orange-700 rounded">3.77–4.07 ★</span>
+            </div>
+
+            <div class="space-y-6">
+              <!-- らぁ麺や 嶋 -->
+              <div class="pb-5 border-b border-autumn-line/70">
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <h3 class="text-lg font-semibold">らぁ麺や 嶋</h3>
+                  <span class="px-2 py-0.5 text-xs font-bold bg-orange-50 text-orange-700 rounded">Tabelog 4.07 ★</span>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">Top modern shoyu ramen · Tokyo’s most revered modern shoyu house.</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://maps.app.goo.gl/DJLrzkb8A6BBGoc7A" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  <a href="https://tabelog.com/tokyo/A1304/A130401/13247487/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Tabelog ↗</a>
+                </div>
+              </div>
+
+              <!-- 中華蕎麦 とみ田 -->
+              <div class="pb-5 border-b border-autumn-line/70">
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <h3 class="text-lg font-semibold">中華蕎麦 とみ田</h3>
+                  <span class="px-2 py-0.5 text-xs font-bold bg-orange-50 text-orange-700 rounded">Tabelog 4.06 ★</span>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">King of seafood tonkotsu tsukemen.</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://maps.app.goo.gl/XAKoQoZRnbLUuF9h9" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  <a href="https://tabelog.com/chiba/A1203/A120302/12000422/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Tabelog ↗</a>
+                </div>
+              </div>
+
+              <!-- RAMEN MATSUI -->
+              <div class="pb-5 border-b border-autumn-line/70">
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <h3 class="text-lg font-semibold">RAMEN MATSUI</h3>
+                  <span class="px-2 py-0.5 text-xs font-bold bg-orange-50 text-orange-700 rounded">Tabelog 3.83 ★</span>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">Elegant clear broth · hyper-precise presentation.</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://maps.app.goo.gl/eAayEV9dsENtdSLEA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  <a href="https://tabelog.com/tokyo/A1304/A130402/13285098/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Tabelog ↗</a>
+                </div>
+              </div>
+
+              <!-- 麵屋周鄉 -->
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <h3 class="text-lg font-semibold">麵屋周鄉</h3>
+                  <span class="px-2 py-0.5 text-xs font-bold bg-orange-50 text-orange-700 rounded">Tabelog 3.77 ★</span>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">Deeply layered tsukemen · Ginza / Shimbashi area.</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://maps.app.goo.gl/BNbuuuHh5nc5SEzWA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  <a href="https://tabelog.com/tokyo/A1301/A130103/13260478/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Tabelog ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== STEAK & BBQ (Red) ========== -->
+        <section>
+          <div class="bg-autumn-card border-2 border-red-500 rounded-2xl p-6 sm:p-7">
+            <div class="flex justify-between items-start mb-5">
+              <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Steak &amp; BBQ</span>
+              <span class="px-2 py-0.5 text-xs font-bold bg-red-100 text-red-700 rounded">3.62–3.96 ★</span>
+
+            </div>
+
+            <div class="space-y-6">
+              <!-- NASQUILLO -->
+              <div class="pb-5 border-b border-autumn-line/70">
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <h3 class="text-lg font-semibold">NASQUILLO（ナスキロ）</h3>
+                  <span class="px-2 py-0.5 text-xs font-bold bg-red-50 text-red-700 rounded">Tabelog 3.77 ★</span>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">Charcoal-grilled luxury cuts · Shinjuku Gyoen area.</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://maps.app.goo.gl/uMZuWFVvDVNionEB9" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  <a href="https://tabelog.com/tokyo/A1304/A130402/13263017/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Tabelog ↗</a>
+                </div>
+              </div>
+
+              <!-- 焼肉ヒロミヤ 四谷4号店 -->
+              <div class="pb-5 border-b border-autumn-line/70">
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <h3 class="text-lg font-semibold">焼肉ヒロミヤ 四谷4号店</h3>
+                  <span class="px-2 py-0.5 text-xs font-bold bg-red-50 text-red-700 rounded">Tabelog 3.62 ★</span>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">Yakiniku · Yotsuya 4-chome.</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://maps.app.goo.gl/qcmabGYmeqNvNyXN7" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  <a href="https://tabelog.com/tokyo/A1309/A130903/13257352/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Tabelog ↗</a>
+                </div>
+              </div>
+
+              <!-- SATOブリアン -->
+              <div class="pb-5 border-b border-autumn-line/70">
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <h3 class="text-lg font-semibold">SATOブリアン</h3>
+                  <span class="px-2 py-0.5 text-xs font-bold bg-red-50 text-red-700 rounded">Tabelog 3.89 ★</span>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">Legendary Chateaubriand yakiniku.</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://maps.app.goo.gl/UpDQ5WMf66cTNmZS8" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  <a href="https://tabelog.com/tokyo/A1319/A131905/13159782/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Tabelog ↗</a>
+                </div>
+              </div>
+
+              <!-- Innocent Carvery -->
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <h3 class="text-lg font-semibold">Innocent Carvery（乃木坂）</h3>
+                  <span class="px-2 py-0.5 text-xs font-bold bg-red-50 text-red-700 rounded">Tabelog 3.96 ★</span>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">Wagyu gallery · tender cuts grilled at the table counter.</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://maps.app.goo.gl/LhKh5skEebhbYTBHA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  <a href="https://tabelog.com/tokyo/A1307/A130701/13189539/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Tabelog ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== WESTERN (Green) ========== -->
+        <section>
+          <div class="bg-autumn-card border-2 border-green-500 rounded-2xl p-6 sm:p-7">
+            <div class="flex justify-between items-start mb-5">
+              <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Western</span>
+              <span class="px-2 py-0.5 text-xs font-bold bg-green-100 text-green-700 rounded">3.69–4.02 ★</span>
+            </div>
+
+            <div class="space-y-6">
+              <!-- KINO_ -->
+              <div class="pb-5 border-b border-autumn-line/70">
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <h3 class="text-lg font-semibold">KINO_</h3>
+                  <span class="px-2 py-0.5 text-xs font-bold bg-green-50 text-green-700 rounded">Tabelog 4.02 ★</span>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">Premium innovative / creative cuisine · Yoyogi.</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://maps.app.goo.gl/7uAxUR7qFeEhqM257" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  <a href="https://tabelog.com/tokyo/A1304/A130403/13285210/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Tabelog ↗</a>
+                </div>
+              </div>
+
+              <!-- LA BETTOLA da Ochiai -->
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <h3 class="text-lg font-semibold">LA BETTOLA da Ochiai</h3>
+                  <span class="px-2 py-0.5 text-xs font-bold bg-green-50 text-green-700 rounded">Tabelog 3.69 ★</span>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">Legendary Italian · rich courses · uni pasta.</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://maps.app.goo.gl/9YGHjrGCFNfRLrDN8" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  <a href="https://tabelog.com/tokyo/A1313/A131301/13002504/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Tabelog ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- ===================== SHOPS ===================== -->
+    <div id="content-shops" class="tab-content space-y-10">
+      <div class="border-b border-autumn-line pb-5">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight font-serif">Shops</h2>
+        <p class="text-autumn-muted mt-1 text-sm">All locations from the original vault · grouped by area · every map link included</p>
+      </div>
+
+      <div class="space-y-12">
+
+        <!-- ========== 新宿 & 伊勢丹 ========== -->
+        <section>
+          <div class="flex items-center justify-between mb-5">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-autumn-muted">新宿 · 伊勢丹</h3>
+            <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="text-xs font-semibold text-autumn-accent hover:underline">Isetan Checklist Map ↗</a>
+          </div>
+
+          <!-- Main Building -->
+          <div class="bg-autumn-card border border-autumn-line rounded-2xl overflow-hidden mb-5">
+            <div class="px-5 py-3 border-b border-autumn-line bg-autumn-paper/60">
+              <h4 class="text-sm font-semibold">Main Building <span class="text-autumn-muted font-normal">(本館)</span></h4>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-autumn-line text-xs uppercase tracking-wider text-autumn-muted">
+                    <th class="py-2.5 px-5 text-left font-medium w-16">Floor</th>
+                    <th class="py-2.5 px-5 text-left font-medium">Brand / Outlet</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-autumn-line/70">
+                  <tr><td class="py-2.5 px-5"><span class="inline-block px-2 py-0.5 text-[11px] font-mono font-bold bg-autumn-ink text-autumn-paper rounded">4F</span></td><td class="py-2.5 px-5 font-medium">Auralee</td></tr>
+                  <tr><td class="py-2.5 px-5"><span class="inline-block px-2 py-0.5 text-[11px] font-mono font-bold bg-autumn-ink text-autumn-paper rounded">4F</span></td><td class="py-2.5 px-5 font-medium">The Row</td></tr>
+                  <tr><td class="py-2.5 px-5"><span class="inline-block px-2 py-0.5 text-[11px] font-mono font-bold bg-autumn-ink text-autumn-paper rounded">3F</span></td><td class="py-2.5 px-5 font-medium italic">Toga Too</td></tr>
+                  <tr><td class="py-2.5 px-5"><span class="inline-block px-2 py-0.5 text-[11px] font-mono font-bold bg-autumn-ink text-autumn-paper rounded">3F</span></td><td class="py-2.5 px-5 font-medium">Wacoal</td></tr>
+                  <tr><td class="py-2.5 px-5"><span class="inline-block px-2 py-0.5 text-[11px] font-mono font-bold bg-autumn-ink text-autumn-paper rounded">3F</span></td><td class="py-2.5 px-5 font-medium">Sacai</td></tr>
+                  <tr><td class="py-2.5 px-5"><span class="inline-block px-2 py-0.5 text-[11px] font-mono font-bold bg-autumn-ink text-autumn-paper rounded">2F</span></td><td class="py-2.5 px-5 font-medium">Vivienne Westwood Red Label</td></tr>
+                  <tr><td class="py-2.5 px-5"><span class="inline-block px-2 py-0.5 text-[11px] font-mono font-bold bg-autumn-ink text-autumn-paper rounded">1F</span></td><td class="py-2.5 px-5 font-medium">GOODS GOODS Issey Miyake</td></tr>
+                  <tr><td class="py-2.5 px-5"><span class="inline-block px-2 py-0.5 text-[11px] font-mono font-bold bg-autumn-ink text-autumn-paper rounded">B2F</span></td><td class="py-2.5 px-5 font-medium">Aesop</td></tr>
+                  <tr><td class="py-2.5 px-5"><span class="inline-block px-2 py-0.5 text-[11px] font-mono font-bold bg-autumn-ink text-autumn-paper rounded">B2F</span></td><td class="py-2.5 px-5 font-medium">BAUM</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Men's Building -->
+          <div class="bg-autumn-card border border-autumn-line rounded-2xl overflow-hidden mb-5">
+            <div class="px-5 py-3 border-b border-autumn-line bg-autumn-paper/60">
+              <h4 class="text-sm font-semibold">Men’s Building <span class="text-autumn-muted font-normal">(メンズ館)</span></h4>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-autumn-line text-xs uppercase tracking-wider text-autumn-muted">
+                    <th class="py-2.5 px-5 text-left font-medium w-16">Floor</th>
+                    <th class="py-2.5 px-5 text-left font-medium">Brand / Outlet</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-autumn-line/70">
+                  <tr><td class="py-2.5 px-5"><span class="inline-block px-2 py-0.5 text-[11px] font-mono font-bold bg-autumn-ink text-autumn-paper rounded">6F</span></td><td class="py-2.5 px-5 font-medium">Multiple Designer Brands</td></tr>
+                  <tr><td class="py-2.5 px-5"><span class="inline-block px-2 py-0.5 text-[11px] font-mono font-bold bg-autumn-ink text-autumn-paper rounded">3F</span></td><td class="py-2.5 px-5 font-medium">Sacai Men’s</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          </section>
+
+        <!-- ========== 南青山 ========== -->
+        <section>
+          <h3 class="text-sm font-bold uppercase tracking-widest text-autumn-muted mb-5">南青山</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Fashion</span>
+                <h4 class="text-lg font-semibold mt-1">COMOLI</h4>
+                <p class="text-sm text-autumn-muted mt-1.5">Beautiful, minimalist casual wear designed with exceptional Japanese textiles for the everyday climate.</p>
+              </div>
+              <a href="https://maps.app.goo.gl/RNGf5HUDL4aVZiDw8" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-autumn-ink hover:underline">
+                Aoyama Store Map <span class="text-xs">↗</span>
+              </a>
+            </div>
+
+            <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Fashion</span>
+                <h4 class="text-lg font-semibold mt-1">Auralee</h4>
+                <p class="text-sm text-autumn-muted mt-1.5">High-end clean Japanese tailoring &amp; premium fabrics.</p>
+              </div>
+              <a href="https://maps.app.goo.gl/Tz6pkhhyjZVSypsKA" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-autumn-ink hover:underline">
+                Flagship Store Map <span class="text-xs">↗</span>
+              </a>
+            </div>
+
+            <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Fashion</span>
+                <h4 class="text-lg font-semibold mt-1">Sacai</h4>
+                <p class="text-sm text-autumn-muted mt-1.5">Innovative hybrid luxury aesthetic and designs.</p>
+              </div>
+              <a href="https://maps.app.goo.gl/BJKFvL3Y4UidJk6g7" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-autumn-ink hover:underline">
+                Aoyama Store Map <span class="text-xs">↗</span>
+              </a>
+            </div>
+
+            <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Lifestyle · Washroom</span>
+                <h4 class="text-lg font-semibold mt-1">H Beauty &amp; Youth</h4>
+                <p class="text-sm text-autumn-muted mt-1.5">Premium upscale apparel curated multi-brand store. Toilet available inside.</p>
+              </div>
+              <a href="https://maps.app.goo.gl/RvMBs1KCZuovgeNV8" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-autumn-ink hover:underline">
+                Map <span class="text-xs">↗</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== 代々木上原 ========== -->
+        <section>
+          <h3 class="text-sm font-bold uppercase tracking-widest text-autumn-muted mb-5">代々木上原</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+            <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Boutique</span>
+                <h4 class="text-base font-semibold mt-1">Loftman Tokyo</h4>
+                <p class="text-sm text-autumn-muted mt-1.5">Excellent curated select store specializing in outdoor and casual brands.</p>
+              </div>
+              <a href="https://maps.app.goo.gl/GedARmLSdb9TyTbg7" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-autumn-ink hover:underline">
+                Map <span class="text-xs">↗</span>
+              </a>
+            </div>
+
+            <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Select Store</span>
+                <h4 class="text-base font-semibold mt-1">Burnish</h4>
+                <p class="text-sm text-autumn-muted mt-1.5">Beautiful clean apparel and curated lifestyle items.</p>
+              </div>
+              <a href="https://maps.app.goo.gl/UPK1SQ9PUYa3tE4h9" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-autumn-ink hover:underline">
+                Map <span class="text-xs">↗</span>
+              </a>
+            </div>
+
+            <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Specialty Cafe</span>
+                <h4 class="text-base font-semibold mt-1">Acid Coffee Tokyo</h4>
+                <p class="text-sm text-autumn-muted mt-1.5">Modern high-quality specialty coffee workspace and stop.</p>
+              </div>
+              <a href="https://maps.app.goo.gl/WqAhueFecwKRc78b9" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-autumn-ink hover:underline">
+                Map <span class="text-xs">↗</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== 中目黒 ========== -->
+        <section>
+          <h3 class="text-sm font-bold uppercase tracking-widest text-autumn-muted mb-5">中目黒</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Apparel</span>
+                <h4 class="text-lg font-semibold mt-1">Coverchord</h4>
+                <p class="text-sm text-autumn-muted mt-1.5">Sleek selection, featuring Nonnative and premium casual wear.</p>
+              </div>
+              <a href="https://maps.app.goo.gl/VX3GXgegqN3Vp9XH7" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-autumn-ink hover:underline">
+                Map <span class="text-xs">↗</span>
+              </a>
+            </div>
+
+            <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Concept Store</span>
+                <h4 class="text-lg font-semibold mt-1">1LDK apartments</h4>
+                <p class="text-sm text-autumn-muted mt-1.5">Beautiful townhouse-inspired multi-concept curation including fine foods and apparel.</p>
+              </div>
+              <a href="https://maps.app.goo.gl/GC3KFAAWZMD9y9En8" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-autumn-ink hover:underline">
+                Map <span class="text-xs">↗</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== 銀座 ========== -->
+        <section>
+          <h3 class="text-sm font-bold uppercase tracking-widest text-autumn-muted mb-5">銀座 (Ginza)</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Shopping Complex</span>
+                <h4 class="text-lg font-semibold mt-1">銀座 Ginza 6</h4>
+                <p class="text-sm text-autumn-muted mt-1.5">Premier upscale luxury department store complex housing massive global brands, art exhibitions, and fine dining.</p>
+              </div>
+              <a href="https://maps.app.goo.gl/G2yh2QfWkTky9fZq7" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-autumn-ink hover:underline">
+                G6 Department Store Map <span class="text-xs">↗</span>
+              </a>
+            </div>
+
+            <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Department Store</span>
+                <h4 class="text-lg font-semibold mt-1">銀座松屋 (Matsuya Ginza)</h4>
+                <p class="text-sm text-autumn-muted mt-1.5">Classic historical department store. Go to the 3F Tourist Counter first for a 5% discount coupon!</p>
+              </div>
+              <a href="https://maps.app.goo.gl/w5rCZrqr17aiGcAo6" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-autumn-ink hover:underline">
+                Ginza Exit A12 Map <span class="text-xs">↗</span>
+              </a>
+            </div>
+
+            <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6 flex flex-col justify-between">
+              <div>
+                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Gourmet Dashi</span>
+                <h4 class="text-lg font-semibold mt-1">銀座 茅乃舎</h4>
+                <p class="text-sm text-autumn-muted mt-1.5">Legendary Japanese dashi seasoning store. Perfect for premium dashi soup stocks and seasonings to take home.</p>
+              </div>
+              <a href="https://maps.app.goo.gl/Yc54pHbSMaDyDtqg8" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-autumn-ink hover:underline">
+                Kayanoya Ginza Map <span class="text-xs">↗</span>
+              </a>
+            </div>
+
+            </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- ===================== BRANDS ===================== -->
+    <div id="content-brands" class="tab-content space-y-10">
+      <div class="border-b border-autumn-line pb-5">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight font-serif">Curated Brand Index</h2>
+        <p class="text-autumn-muted mt-1 text-sm">Instagram · flagship maps · Isetan floors</p>
+      </div>
+
+      <!-- Clothing & Fashion -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-widest text-autumn-muted mb-5 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-autumn-accent"></span>
+          Clothing &amp; Fashion
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+          <!-- A. PRESSE -->
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">A. PRESSE</h4>
+              <p class="text-xs text-autumn-muted font-mono mt-0.5">EST. 2021 — TOKYO</p>
+              <p class="text-sm text-autumn-muted mt-2">Flagship: Jingumae B1F · also Coverchord</p>
+              <p class="text-xs text-autumn-muted mt-1">Isetan Men’s Bldg 6F</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://www.instagram.com/a.presse_/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Isetan Map ↗</a>
+              <a href="https://www.google.com/maps/search/A.+PRESSE+Jingumae+Tokyo" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Flagship Map ↗</a>
+            </div>
+          </div>
+
+          <!-- AURALEE -->
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">AURALEE</h4>
+              <p class="text-xs text-autumn-muted font-mono mt-0.5">EST. 2015 — TOKYO</p>
+              <p class="text-sm text-autumn-muted mt-2">Flagship: Minami Aoyama</p>
+              <p class="text-xs text-autumn-muted mt-1">Isetan Main Bldg 4F (Women) · Men’s Bldg 6F</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://www.instagram.com/auralee_tokyo/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://maps.app.goo.gl/Tz6pkhhyjZVSypsKA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Flagship Map ↗</a>
+              <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Isetan Map ↗</a>
+            </div>
+          </div>
+
+          <!-- COMOLI -->
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">COMOLI</h4>
+              <p class="text-xs text-autumn-muted font-mono mt-0.5">EST. 2011 — TOKYO</p>
+              <p class="text-sm text-autumn-muted mt-2">Flagship: Aoyama (Collezione 2F)</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://www.instagram.com/comoli.official/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://maps.app.goo.gl/RNGf5HUDL4aVZiDw8" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Flagship Map ↗</a>
+            </div>
+          </div>
+
+          <!-- SACAI -->
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">SACAI</h4>
+              <p class="text-sm text-autumn-muted mt-2">Flagship: Aoyama</p>
+              <p class="text-xs text-autumn-muted mt-1">Isetan Main Bldg 3F · Men’s Bldg 3F</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://www.instagram.com/sacaiofficial/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://maps.app.goo.gl/BJKFvL3Y4UidJk6g7" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Flagship Map ↗</a>
+              <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Isetan Map ↗</a>
+            </div>
+          </div>
+
+          <!-- THE ROW -->
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">THE ROW</h4>
+              <p class="text-sm text-autumn-muted mt-2">Isetan Main Building focus</p>
+              <p class="text-xs text-autumn-muted mt-1">Isetan Main Bldg 4F</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://www.instagram.com/therow/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Isetan Map ↗</a>
+            </div>
+          </div>
+
+          <!-- ISSEY MIYAKE -->
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">ISSEY MIYAKE</h4>
+              <p class="text-sm text-autumn-muted mt-2">Isetan Main Building · GOODS GOODS</p>
+              <p class="text-xs text-autumn-muted mt-1">Isetan Main Bldg 1F</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://www.instagram.com/isseymiyakeofficial/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Isetan Map ↗</a>
+            </div>
+          </div>
+
+          <!-- GRAPHPAPER -->
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">GRAPHPAPER</h4>
+              <p class="text-sm text-autumn-muted mt-2">Flagship: Graphpaper TOKYO (Yoyogi) · Aoyama</p>
+              <p class="text-xs text-autumn-muted mt-1">Isetan Men’s Bldg 6F</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://www.instagram.com/graphpaper_tokyo/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://www.google.com/maps/search/Graphpaper+TOKYO+Yoyogi" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Flagship Map ↗</a>
+              <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Isetan Map ↗</a>
+            </div>
+          </div>
+
+          <!-- UNLIKELY -->
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">UNLIKELY</h4>
+              <p class="text-sm text-autumn-muted mt-2">Select stores &amp; concept shops</p>
+              <p class="text-xs text-autumn-muted mt-1">Isetan Men’s Bldg 6F</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://www.instagram.com/unlikely_drygoods/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Isetan Map ↗</a>
+              <a href="https://www.google.com/maps/search/UNLIKELY+Tokyo" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+            </div>
+          </div>
+
+          <!-- N. HOOLYWOOD -->
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">N. HOOLYWOOD</h4>
+              <p class="text-sm text-autumn-muted mt-2">Official: Mister Hollywood / N.Hoolywood Shinjuku</p>
+              <p class="text-xs text-autumn-muted mt-1">Isetan Men’s Bldg 6F</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://www.instagram.com/n_hoolywood/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://www.google.com/maps/search/Mister+Hollywood+Jingumae+Tokyo" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Flagship Map ↗</a>
+              <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Isetan Map ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Cosmetics -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-widest text-autumn-muted mb-5 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-autumn-accentSoft"></span>
+          Cosmetics &amp; Lifestyle
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5">
+            <h4 class="font-semibold">AESOP</h4>
+            <p class="text-xs text-autumn-muted mt-1">Isetan Main Bldg B2F</p>
+            <div class="flex flex-wrap gap-3 mt-3 text-sm">
+              <a href="https://www.instagram.com/aesop/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Isetan Map ↗</a>
+            </div>
+          </div>
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5">
+            <h4 class="font-semibold">BAUM</h4>
+            <p class="text-xs text-autumn-muted mt-1">Isetan Main Bldg B2F</p>
+            <div class="flex flex-wrap gap-3 mt-3 text-sm">
+              <a href="https://www.instagram.com/baum_global/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Isetan Map ↗</a>
+            </div>
+          </div>
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5">
+            <h4 class="font-semibold">MARKS &amp; WEB</h4>
+            <div class="flex flex-wrap gap-3 mt-3 text-sm">
+              <a href="https://www.instagram.com/marks_and_web/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+            </div>
+          </div>
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5">
+            <h4 class="font-semibold">WACOAL</h4>
+            <p class="text-xs text-autumn-muted mt-1">Isetan Main Bldg 3F</p>
+            <div class="flex flex-wrap gap-3 mt-3 text-sm">
+              <a href="https://www.instagram.com/wacoal_jp/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Isetan Map ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chiikawa & JB -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-widest text-autumn-muted mb-5 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-autumn-muted"></span>
+          Chiikawa &amp; JB
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">Chiikawa Bakery Harajuku</h4>
+              <p class="text-sm text-autumn-muted mt-1">Tokyu Plaza Omotesando Omokado 3F · also Laforet pop-up</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://x.com/chiikawabakery" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">X ↗</a>
+              <a href="https://www.instagram.com/chiikawa.bakery/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">IG ↗</a>
+              <a href="https://www.google.com/maps/search/Chiikawa+Bakery+Tokyu+Plaza+Omotesando" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+            </div>
+          </div>
+
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">Chiikawa Land Harajuku</h4>
+              <p class="text-sm text-autumn-muted mt-1">Kiddy Land Harajuku 1F</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://x.com/chiikawa_land" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">X ↗</a>
+              <a href="https://www.google.com/maps/search/Chiikawa+Land+Kiddy+Land+Harajuku" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+            </div>
+          </div>
+
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">Chiikawa Land Shinjuku</h4>
+              <p class="text-sm text-autumn-muted mt-1">Okadaya Bldg 2F · Shinjuku 3-chome</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://x.com/chiikawa_land" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">X ↗</a>
+              <a href="https://www.google.com/maps/search/Chiikawa+Land+Shinjuku+Okadaya" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+            </div>
+          </div>
+
+          <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
+            <div>
+              <h4 class="font-semibold text-lg">Jokebear Store (NAGANO MARKET)</h4>
+              <p class="text-sm text-autumn-muted mt-1">Ginza · Marronnier Gate / official NAGANO shops</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://x.com/nagano_market" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">X ↗</a>
+              <a href="https://www.google.com/maps/search/NAGANO+MARKET+Ginza" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+            </div>
+          </div>
+
+          <div class="bg-autumn-card border-2 border-orange-400 rounded-xl p-5 flex flex-col justify-between sm:col-span-2">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <h4 class="font-semibold text-lg">Chiikawa Skytree</h4>
+                <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-orange-100 text-orange-700 rounded">EVENT</span>
+              </div>
+              <p class="text-sm text-autumn-muted mt-1">Observation Deck + Cafe collaboration · Tokyo Skytree</p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://maps.app.goo.gl/75xAUCC15UQRcH3q7" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+              <a href="https://www.tokyo-skytree.jp/en/event/special/chiikawa/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Event page ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== SIZE GUIDE ===================== -->
+    <div id="content-size" class="tab-content space-y-10">
+      <div class="border-b border-autumn-line pb-5">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight font-serif">Size Guide Index</h2>
+        <p class="text-autumn-muted mt-1 text-sm">Personal measurements · size metrics highlighted in accent</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Auralee Summer -->
+        <div class="bg-autumn-card border border-autumn-line rounded-2xl p-6">
+          <h3 class="text-lg font-semibold mb-4">Auralee Summer</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left">
+              <thead>
+                <tr class="border-b border-autumn-line text-xs uppercase tracking-wider text-autumn-muted">
+                  <th class="py-2 pr-3 font-medium">Item</th>
+                  <th class="py-2 pr-3 font-medium">Size</th>
+                  <th class="py-2 font-medium">Qty</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-autumn-line/60">
+                <tr><td class="py-2.5">薄短袖</td><td class="py-2.5 font-bold text-autumn-accent">4</td><td class="py-2.5 font-mono">1</td></tr>
+                <tr><td class="py-2.5">厚短袖(有袋)</td><td class="py-2.5 font-bold text-autumn-accent">4</td><td class="py-2.5 font-mono">1</td></tr>
+                <tr><td class="py-2.5">厚短袖(無袋)</td><td class="py-2.5 font-bold text-autumn-accent">5</td><td class="py-2.5 font-mono">1</td></tr>
+                <tr><td class="py-2.5">Stand Up 短袖</td><td class="py-2.5 font-bold text-autumn-accent">4–5</td><td class="py-2.5 font-mono">4</td></tr>
+                <tr><td class="py-2.5">短袖恤衫</td><td class="py-2.5 font-bold text-autumn-accent">4</td><td class="py-2.5 font-mono">2</td></tr>
+                <tr><td class="py-2.5">長袖恤衫</td><td class="py-2.5 font-bold text-autumn-accent">4</td><td class="py-2.5 font-mono">2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Auralee Winter -->
+        <div class="bg-autumn-card border border-autumn-line rounded-2xl p-6">
+          <h3 class="text-lg font-semibold mb-4">Auralee Winter</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left">
+              <thead>
+                <tr class="border-b border-autumn-line text-xs uppercase tracking-wider text-autumn-muted">
+                  <th class="py-2 pr-3 font-medium">Item</th>
+                  <th class="py-2 pr-3 font-medium">Size</th>
+                  <th class="py-2 font-medium">Qty</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-autumn-line/60">
+                <tr><td class="py-2.5">薄長袖</td><td class="py-2.5 font-bold text-autumn-accent">4–5 (pref 5)</td><td class="py-2.5 font-mono">3</td></tr>
+                <tr><td class="py-2.5">較厚長袖</td><td class="py-2.5 font-bold text-autumn-accent">4–5 (pref 5)</td><td class="py-2.5 font-mono">3</td></tr>
+                <tr><td class="py-2.5">Stand Up 長袖</td><td class="py-2.5 font-bold text-autumn-accent">5</td><td class="py-2.5 font-mono">1</td></tr>
+                <tr><td class="py-2.5">Hoodies</td><td class="py-2.5 font-bold text-autumn-accent">4</td><td class="py-2.5 font-mono">2</td></tr>
+                <tr><td class="py-2.5">樽頸長袖</td><td class="py-2.5 font-bold text-autumn-accent">3</td><td class="py-2.5 font-mono">1</td></tr>
+                <tr><td class="py-2.5">Jeans Jacket</td><td class="py-2.5 font-bold text-autumn-accent">5</td><td class="py-2.5 font-mono">1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- A. PRESSE -->
+        <div class="bg-autumn-card border border-autumn-line rounded-2xl p-6">
+          <h3 class="text-lg font-semibold mb-4">A. PRESSE</h3>
+          <table class="w-full text-sm text-left">
+            <tbody class="divide-y divide-autumn-line/60">
+              <tr><td class="py-2.5">Jeans Jacket</td><td class="py-2.5 font-bold text-autumn-accent text-right">48</td></tr>
+              <tr><td class="py-2.5">Green Jacket</td><td class="py-2.5 font-bold text-autumn-accent text-right">2</td></tr>
+              <tr><td class="py-2.5">Jeans</td><td class="py-2.5 font-bold text-autumn-accent text-right">34 / 32</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- N. Hoolywood -->
+        <div class="bg-autumn-card border border-autumn-line rounded-2xl p-6">
+          <h3 class="text-lg font-semibold mb-4">N. Hoolywood</h3>
+          <table class="w-full text-sm text-left">
+            <tbody class="divide-y divide-autumn-line/60">
+              <tr><td class="py-2.5">T Shirt</td><td class="py-2.5 font-bold text-autumn-accent text-right">M to L</td></tr>
+              <tr><td class="py-2.5">Shirt</td><td class="py-2.5 font-bold text-autumn-accent text-right">40</td></tr>
+              <tr><td class="py-2.5">Pants</td><td class="py-2.5 font-bold text-autumn-accent text-right">L</td></tr>
+              <tr><td class="py-2.5">Jacket</td><td class="py-2.5 font-bold text-autumn-accent text-right">M</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Sacai / United Tokyo / Uniqlo -->
+        <div class="bg-autumn-card border border-autumn-line rounded-2xl p-6">
+          <h3 class="text-lg font-semibold mb-4">Sacai · United Tokyo · Uniqlo</h3>
+          <table class="w-full text-sm text-left">
+            <tbody class="divide-y divide-autumn-line/60">
+              <tr><td class="py-2.5">Sacai Shirt / Pants</td><td class="py-2.5 font-bold text-autumn-accent text-right">2 / 3</td></tr>
+              <tr><td class="py-2.5">United Tokyo (T / Shirt / Pants)</td><td class="py-2.5 font-bold text-autumn-accent text-right">2</td></tr>
+              <tr><td class="py-2.5">Uniqlo Shirt</td><td class="py-2.5 font-bold text-autumn-accent text-right">XL</td></tr>
+              <tr><td class="py-2.5">Uniqlo / Muji Pants</td><td class="py-2.5 font-bold text-autumn-accent text-right">L</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Others -->
+        <div class="bg-autumn-card border border-autumn-line rounded-2xl p-6">
+          <h3 class="text-lg font-semibold mb-4">Others</h3>
+          <table class="w-full text-sm text-left">
+            <tbody class="divide-y divide-autumn-line/60">
+              <tr><td class="py-2.5">GP Jeans</td><td class="py-2.5 font-bold text-autumn-accent text-right">3</td></tr>
+              <tr><td class="py-2.5">GP Pocket T</td><td class="py-2.5 font-bold text-autumn-accent text-right">M / L</td></tr>
+              <tr><td class="py-2.5">Unlikely Jacket</td><td class="py-2.5 font-bold text-autumn-accent text-right">M</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="max-w-5xl mx-auto px-5 sm:px-8 py-10 w-full border-t border-autumn-line mt-8">
+    <p class="text-xs text-autumn-muted tracking-wide">
+      Adapted from the original Fufu Tokyo vault · Minimal autumn palette · For personal travel use
+    </p>
+  </footer>
+
+  <script>
+    function switchTab(tabId) {
+      // Hide all content
+      document.querySelectorAll('.tab-content').forEach(el => {
+        el.classList.remove('active');
+      });
+      // Deactivate all buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.add('text-autumn-muted', 'border-transparent');
+        btn.classList.remove('text-autumn-ink', 'border-autumn-ink');
+      });
+
+      // Show selected content
+      const content = document.getElementById('content-' + tabId);
+      if (content) content.classList.add('active');
+
+      // Activate selected button
+      const btn = document.getElementById('tab-' + tabId);
+      if (btn) {
+        btn.classList.add('active', 'text-autumn-ink', 'border-autumn-ink');
+        btn.classList.remove('text-autumn-muted', 'border-transparent');
+      }
+
+      // Scroll to top of main content smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Optional: deep link support (?tab=restaurants)
+    const params = new URLSearchParams(window.location.search);
+    const initial = params.get('tab');
+    if (initial && document.getElementById('content-' + initial)) {
+      switchTab(initial);
+    }
+  </script>
+</body>
+</html>
