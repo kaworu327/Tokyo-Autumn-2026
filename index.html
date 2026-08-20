@@ -76,7 +76,7 @@
         Tokyo <span class="italic font-normal">Autumn</span>
       </h1>
       <p class="text-autumn-muted text-base tracking-wide">
-        23–25 Sep · Digital travel vault · Itinerary · Restaurants · Shops · Brands · Size guide
+        23–25 Sep · Digital travel vault · Itinerary · Weather · Restaurants · Shops · Brands · Size guide
       </p>
     </div>
   </section>
@@ -86,6 +86,10 @@
     <div class="flex space-x-1 sm:space-x-2 overflow-x-auto no-scrollbar border-b border-autumn-line pb-0">
       <button onclick="switchTab('booking')" id="tab-booking" class="tab-btn active px-4 sm:px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide border-b-2 border-autumn-ink text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
         Itinerary and Booking
+      </button>
+
+      <button onclick="switchTab('weather')" id="tab-weather" class="tab-btn px-4 sm:px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide border-b-2 border-transparent text-autumn-muted hover:text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
+        Weather
       </button>
 
       <button onclick="switchTab('restaurants')" id="tab-restaurants" class="tab-btn px-4 sm:px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide border-b-2 border-transparent text-autumn-muted hover:text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
@@ -116,6 +120,29 @@
         </div>
 
         <div class="space-y-6">
+          <!-- Arrival Flight NH814 -->
+          <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6 hover:shadow-sm transition-shadow">
+            <div class="flex items-start gap-4">
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-white border border-autumn-line flex items-center justify-center overflow-hidden">
+                <img src="https://www.gstatic.com/flights/airline_logos/70px/NH.png" alt="ANA" class="w-9 h-9 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="hidden text-xs font-bold text-blue-800 tracking-tight">ANA</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 text-[10px] tracking-widest uppercase font-bold bg-emerald-100 text-emerald-800 rounded">Arrival</span>
+                  <span class="text-sm font-semibold text-autumn-ink">NH814</span>
+                  <span class="text-xs text-autumn-muted">· All Nippon Airways</span>
+                </div>
+                <p class="text-base font-semibold text-autumn-ink tracking-tight">Hong Kong (HKG) → Tokyo Haneda (HND)</p>
+                <div class="mt-2 flex flex-wrap items-baseline gap-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Arrival Time</span>
+                  <span class="text-xl font-bold tracking-tight" style="color:#000099">04:55</span>
+                  <span class="text-sm text-autumn-muted">23 Sep</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Tokyu Stay Shinjuku -->
           <div class="bg-autumn-card border border-autumn-line rounded-2xl p-6 sm:p-8 hover:shadow-sm transition-shadow">
             <div class="flex flex-col sm:flex-row justify-between sm:items-start gap-4 mb-5">
@@ -153,13 +180,64 @@
               Map <span class="text-xs">↗</span>
             </a>
           </div>
+
+          <!-- Departing Flight HD79 -->
+          <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6 hover:shadow-sm transition-shadow">
+            <div class="flex items-start gap-4">
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-white border border-autumn-line flex items-center justify-center overflow-hidden">
+                <img src="https://www.gstatic.com/flights/airline_logos/70px/HD.png" alt="Air Do" class="w-9 h-9 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="hidden text-xs font-bold text-autumn-ink tracking-tight">HD</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 text-[10px] tracking-widest uppercase font-bold bg-rose-100 text-rose-800 rounded">Departure</span>
+                  <span class="text-sm font-semibold text-autumn-ink">HD79</span>
+                  <span class="text-xs text-autumn-muted">· Air Do</span>
+                </div>
+                <p class="text-base font-semibold text-autumn-ink tracking-tight">Tokyo Haneda (HND) → Memanbetsu (MMB)</p>
+                <div class="mt-2 flex flex-wrap items-baseline gap-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-rose-700">Departing Time</span>
+                  <span class="text-xl font-bold tracking-tight" style="color:#000099">16:45</span>
+                  <span class="text-sm text-autumn-muted">25 Sep</span>
+                </div>
+                <div class="mt-1.5 flex flex-wrap items-baseline gap-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-autumn-muted">Time of Airport Arrival</span>
+                  <span class="text-lg font-bold tracking-tight" style="color:#000099">15:15</span>
+                  <span class="text-xs text-autumn-muted">(90 min before)</span>
+                </div>
+                <div class="mt-3 p-3 bg-autumn-paper rounded-xl border border-autumn-line/70">
+                  <div class="flex items-center justify-between gap-2 mb-1">
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-autumn-muted">Flight Status</span>
+                    <a href="https://www.airportia.com/flights/hd79/tokyo/ozora/" target="_blank" rel="noopener" class="text-[11px] font-medium text-autumn-ink hover:underline">Live tracker ↗</a>
+                  </div>
+                  <p class="text-sm font-semibold text-autumn-ink">Scheduled · Est. dep 16:45 JST</p>
+                  <p class="text-xs text-autumn-muted mt-0.5">Terminal 2 · Gate typically 51 · Recent average delay ~10–15 min · Check live closer to date</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Itinerary -->
       <div>
-        <h2 class="text-xl font-semibold tracking-tight font-serif mb-6">Itinerary</h2>
+        <h2 class="text-xl font-semibold tracking-tight font-serif mb-4">Itinerary</h2>
 
+        <!-- Day sub-tabs -->
+        <div class="flex gap-1 sm:gap-2 mb-6 border-b border-autumn-line">
+          <button type="button" onclick="switchDay('23')" id="day-tab-23" class="day-tab active px-4 py-2.5 text-sm font-semibold border-b-2 border-autumn-ink text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
+            23 Sep
+          </button>
+          <button type="button" onclick="switchDay('24')" id="day-tab-24" class="day-tab px-4 py-2.5 text-sm font-semibold border-b-2 border-transparent text-autumn-muted hover:text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
+            24 Sep
+          </button>
+          <button type="button" onclick="switchDay('25')" id="day-tab-25" class="day-tab px-4 py-2.5 text-sm font-semibold border-b-2 border-transparent text-autumn-muted hover:text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
+            25 Sep
+          </button>
+        </div>
+
+        <!-- ========== 23 Sep ========== -->
+        <div id="day-content-23" class="day-content">
         <!-- Big group box for 23 Sep -->
         <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-7">
           <div class="flex items-center justify-between mb-6 pb-4 border-b border-autumn-line">
@@ -178,7 +256,7 @@
               <div class="flex-1 min-w-0 pb-2">
                 <div class="flex flex-wrap items-baseline justify-between gap-2">
                   <p class="text-sm font-medium text-autumn-ink">HND Airport → Tokyu Stay Shinjuku</p>
-                  <p class="text-sm font-bold">Dep <span class="italic text-orange-500">06:00</span></p>
+                  <p class="text-sm font-bold text-autumn-ink">Dep <span class="text-xl font-bold tracking-tight" style="color:#000099">06:00</span></p>
                 </div>
                 <p class="text-xs text-autumn-muted mt-0.5">≈ 45–55 min · Keikyu / Monorail + subway or Airport Limousine</p>
                 <a href="https://maps.app.goo.gl/iDtbT2yyekC8J1K68" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
@@ -188,8 +266,8 @@
             <!-- Destination: Hotel arrive 07:00 -->
             <div class="bg-autumn-paper border border-autumn-line rounded-xl p-4 relative mb-1">
               <div class="absolute top-4 right-4 text-right">
-                <p class="text-sm font-bold text-autumn-ink">23 Sep</p>
-                <p class="text-sm font-bold italic text-orange-500">07:00</p>
+                <p class="text-xl font-bold tracking-tight" style="color:#000099">07:00</p>
+                <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
               </div>
               <div class="pr-20">
                 <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Arrive · Hotel</span>
@@ -208,7 +286,7 @@
               <div class="flex-1 min-w-0 pb-2">
                 <div class="flex flex-wrap items-baseline justify-between gap-2">
                   <p class="text-sm font-medium text-autumn-ink">Tokyu Stay Shinjuku → Tokyo Skytree</p>
-                  <p class="text-sm font-bold">Dep ≈ <span class="italic text-orange-500">08:05</span></p>
+                  <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">08:05</span></p>
                 </div>
                 <p class="text-xs text-autumn-muted mt-0.5">≈ 30–35 min · leave by ~08:05 to arrive 08:45</p>
                 <a href="https://maps.app.goo.gl/mhDqBzNh6DbTeZtUA" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
@@ -216,7 +294,7 @@
             </div>
 
             <!-- Destination: Skytree Chiikawa — TO BE BOOKED -->
-            <div class="bg-autumn-paper border-2 border-orange-400 rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+            <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
               <div class="shrink-0 flex flex-col items-center gap-0.5 pt-1 text-xl leading-none" title="Chiikawa · Usagi · Hachiware · Kurimanju">
                 <span>🐹</span>
                 <span class="text-base">🐰</span>
@@ -225,8 +303,8 @@
               </div>
               <div class="flex-1 min-w-0 pr-16">
                 <div class="absolute top-4 right-4 text-right">
-                  <p class="text-sm font-bold text-autumn-ink">23 Sep</p>
-                  <p class="text-sm font-bold italic text-orange-500">08:45</p>
+                  <p class="text-xl font-bold tracking-tight" style="color:#000099">08:45</p>
+                  <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
                 <div class="flex items-center gap-2 mb-1">
                   <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Arrive · Skytree</span>
@@ -251,7 +329,7 @@
               <div class="flex-1 min-w-0 pb-2">
                 <div class="flex flex-wrap items-baseline justify-between gap-2">
                   <p class="text-sm font-medium text-autumn-ink">Tokyo Skytree → LA BETTOLA da Ochiai</p>
-                  <p class="text-sm font-bold">Dep ≈ <span class="italic text-orange-500">12:35</span></p>
+                  <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">12:35</span></p>
                 </div>
                 <p class="text-xs text-autumn-muted mt-0.5">≈ 30–35 min · subway via Asakusa / Ginza lines</p>
                 <a href="https://www.google.com/maps/dir/?api=1&origin=Tokyo+Skytree&destination=LA+BETTOLA+da+Ochiai+Ginza&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
@@ -259,12 +337,12 @@
             </div>
 
             <!-- Destination: LA BETTOLA -->
-            <div class="bg-autumn-paper border-2 border-blue-400 rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+            <div class="bg-autumn-paper border-2 border-[#800080] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
               <div class="shrink-0 text-3xl leading-none pt-0.5" title="Restaurant">🍽️</div>
               <div class="flex-1 min-w-0 pr-16">
                 <div class="absolute top-4 right-4 text-right">
-                  <p class="text-sm font-bold text-autumn-ink">23 Sep</p>
-                  <p class="text-sm font-bold italic text-orange-500">13:15</p>
+                  <p class="text-xl font-bold tracking-tight" style="color:#000099">13:15</p>
+                  <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
                 <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Lunch</span>
                 <h4 class="text-base font-semibold mt-1">LA BETTOLA da Ochiai</h4>
@@ -282,7 +360,7 @@
               <div class="flex-1 min-w-0 pb-2">
                 <div class="flex flex-wrap items-baseline justify-between gap-2">
                   <p class="text-sm font-medium text-autumn-ink">LA BETTOLA → 中目黒</p>
-                  <p class="text-sm font-bold">Dep ≈ <span class="italic text-orange-500">14:20</span></p>
+                  <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">14:20</span></p>
                 </div>
                 <p class="text-xs text-autumn-muted mt-0.5">≈ 25–35 min · Hibiya / Toyoko area</p>
                 <a href="https://www.google.com/maps/dir/?api=1&origin=LA+BETTOLA+da+Ochiai+Ginza&destination=Nakameguro+Station&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
@@ -290,12 +368,12 @@
             </div>
 
             <!-- Destination: Haircut — TO BE BOOKED -->
-            <div class="bg-autumn-paper border-2 border-orange-400 rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+            <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
               <div class="shrink-0 text-3xl leading-none pt-0.5" title="Haircut">💇</div>
               <div class="flex-1 min-w-0 pr-24">
                 <div class="absolute top-4 right-4 text-right">
-                  <p class="text-sm font-bold text-autumn-ink">23 Sep</p>
-                  <p class="text-sm font-bold italic text-orange-500">15:00 – 17:00</p>
+                  <p class="text-xl font-bold tracking-tight" style="color:#000099">15:00 – 17:00</p>
+                  <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
                 <div class="flex items-center gap-2 mb-1">
                   <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Appointment · Haircut</span>
@@ -316,7 +394,7 @@
               <div class="flex-1 min-w-0 pb-2">
                 <div class="flex flex-wrap items-baseline justify-between gap-2">
                   <p class="text-sm font-medium text-autumn-ink">中目黒 → Shinjuku Isetan</p>
-                  <p class="text-sm font-bold">Dep ≈ <span class="italic text-orange-500">17:05</span></p>
+                  <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">17:05</span></p>
                 </div>
                 <p class="text-xs text-autumn-muted mt-0.5">≈ 20–25 min · Toyoko → Fukutoshin or Yamanote via Meguro</p>
                 <a href="https://www.google.com/maps/dir/?api=1&origin=Nakameguro+Station&destination=Isetan+Shinjuku&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
@@ -324,12 +402,12 @@
             </div>
 
             <!-- Destination: Shinjuku Isetan 17:30–20:00 -->
-            <div class="bg-autumn-paper border border-autumn-line rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+            <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
               <div class="shrink-0 text-3xl leading-none pt-0.5" title="Shopping">🛍️</div>
               <div class="flex-1 min-w-0 pr-24">
                 <div class="absolute top-4 right-4 text-right">
-                  <p class="text-sm font-bold text-autumn-ink">23 Sep</p>
-                  <p class="text-sm font-bold italic text-orange-500">17:30 – 20:00</p>
+                  <p class="text-xl font-bold tracking-tight" style="color:#000099">17:30 – 20:00</p>
+                  <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
                 <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Shopping · Department store</span>
                 <h4 class="text-base font-semibold mt-1">Shinjuku Isetan</h4>
@@ -347,7 +425,7 @@
               <div class="flex-1 min-w-0 pb-2">
                 <div class="flex flex-wrap items-baseline justify-between gap-2">
                   <p class="text-sm font-medium text-autumn-ink">Shinjuku Isetan → 焼肉ヒロミヤ 四谷</p>
-                  <p class="text-sm font-bold">Dep ≈ <span class="italic text-orange-500">20:00</span></p>
+                  <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">20:00</span></p>
                 </div>
                 <p class="text-xs text-autumn-muted mt-0.5">≈ 10–15 min · walk / short subway to Yotsuya</p>
                 <a href="https://www.google.com/maps/dir/?api=1&origin=Isetan+Shinjuku&destination=%E7%84%BC%E8%82%89%E3%83%92%E3%83%AD%E3%83%9F%E3%83%A4+%E5%9B%9B%E8%B0%B74%E5%8F%B7%E5%BA%97&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
@@ -355,12 +433,12 @@
             </div>
 
             <!-- Destination: 焼肉ヒロミヤ -->
-            <div class="bg-autumn-paper border-2 border-blue-400 rounded-xl p-4 relative flex gap-3 items-start">
+            <div class="bg-autumn-paper border-2 border-[#800080] rounded-xl p-4 relative flex gap-3 items-start">
               <div class="shrink-0 text-3xl leading-none pt-0.5" title="Restaurant">🍽️</div>
               <div class="flex-1 min-w-0 pr-16">
                 <div class="absolute top-4 right-4 text-right">
-                  <p class="text-sm font-bold text-autumn-ink">23 Sep</p>
-                  <p class="text-sm font-bold italic text-orange-500">20:30</p>
+                  <p class="text-xl font-bold tracking-tight" style="color:#000099">20:30</p>
+                  <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
                 <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Dinner</span>
                 <h4 class="text-base font-semibold mt-1">焼肉ヒロミヤ 四谷4号店</h4>
@@ -370,6 +448,442 @@
 
           </div>
         </div>
+        </div><!-- end day-content-23 -->
+
+        <!-- ========== 24 Sep ========== -->
+        <div id="day-content-24" class="day-content hidden">
+          <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-7">
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-autumn-line">
+              <h3 class="text-lg font-semibold tracking-tight">24 Sep</h3>
+              <span class="text-xs text-autumn-muted font-medium">Day 2 · estimated times · public transport</span>
+            </div>
+
+            <div class="space-y-0">
+
+              <!-- Travel: Hotel → Yokohama Museum -->
+              <div class="flex gap-3 py-3 px-1">
+                <div class="flex flex-col items-center shrink-0 w-9">
+                  <span class="text-lg leading-none">🚆</span>
+                  <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+                </div>
+                <div class="flex-1 min-w-0 pb-2">
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <p class="text-sm font-medium text-autumn-ink">Tokyu Stay Shinjuku → Yokohama Museum of Art</p>
+                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">08:50</span></p>
+                  </div>
+                  <p class="text-xs text-autumn-muted mt-0.5">≈ 45–50 min · JR Shonan-Shinjuku / Toyoko + Minatomirai · leave by ~08:50 to arrive 09:50</p>
+                  <a href="https://maps.app.goo.gl/MX1jZqyePSBkFEpEA" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+                </div>
+              </div>
+
+              <!-- Destination: Marie Antoinette Style -->
+              <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+                <div class="shrink-0 text-3xl leading-none pt-0.5" title="Exhibition">🎨</div>
+                <div class="flex-1 min-w-0 pr-16">
+                  <div class="absolute top-4 right-4 text-right">
+                    <p class="text-xl font-bold tracking-tight" style="color:#000099">10:00</p>
+                    <p class="text-xs font-medium text-autumn-muted">24 Sep</p>
+                  </div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Arrive · Exhibition</span>
+                    <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-orange-100 text-orange-700 rounded">TO BE BOOKED</span>
+                  </div>
+                  <h4 class="text-base font-semibold mt-1">Marie Antoinette Style</h4>
+                  <p class="text-[11px] text-autumn-muted mt-0.5">Yokohama Museum of Art · opens 10:00</p>
+                  <div class="flex flex-wrap gap-3 mt-1.5 text-sm">
+                    <a href="https://maps.app.goo.gl/PvL4x5Q3MMDyrcEz6" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Venue map ↗</a>
+                    <a href="https://yokohama.art.museum/eng/exhibition/202608_marie2026/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Exhibition info ↗</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Travel: Museum → 炭火割烹 庵 -->
+              <div class="flex gap-3 py-3 px-1">
+                <div class="flex flex-col items-center shrink-0 w-9">
+                  <div class="w-px flex-1 min-h-[8px] bg-autumn-line mb-1"></div>
+                  <span class="text-lg leading-none">🚆</span>
+                  <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+                </div>
+                <div class="flex-1 min-w-0 pb-2">
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <p class="text-sm font-medium text-autumn-ink">Yokohama Museum of Art → 炭火割烹 庵</p>
+                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">12:30</span></p>
+                  </div>
+                  <p class="text-xs text-autumn-muted mt-0.5">≈ 15–20 min · Minatomirai Line / short walk · Bashamichi area</p>
+                  <a href="https://maps.app.goo.gl/UBVwotkQxFzNNRLDA" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+                </div>
+              </div>
+
+              <!-- Destination: 炭火割烹 庵 -->
+              <div class="bg-autumn-paper border-2 border-[#800080] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+                <div class="shrink-0 text-3xl leading-none pt-0.5" title="Restaurant">🍽️</div>
+                <div class="flex-1 min-w-0 pr-16">
+                  <div class="absolute top-4 right-4 text-right">
+                    <p class="text-xl font-bold tracking-tight" style="color:#000099">13:00</p>
+                    <p class="text-xs font-medium text-autumn-muted">24 Sep</p>
+                  </div>
+                  <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Lunch</span>
+                  <h4 class="text-base font-semibold mt-1">炭火割烹 庵</h4>
+                  <p class="text-[11px] text-autumn-muted mt-0.5">Bashamichi · Japanese kappo · 予約番号 K275FY3MHM</p>
+                  <div class="flex flex-wrap gap-3 mt-1.5 text-sm">
+                    <a href="https://maps.app.goo.gl/nH4NctLzzg92HH6r7" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                    <a href="https://tabelog.com/kanagawa/A1401/A140104/14079044/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Tabelog ↗</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Travel: Restaurant → Omotesando / Minami-Aoyama -->
+              <div class="flex gap-3 py-3 px-1">
+                <div class="flex flex-col items-center shrink-0 w-9">
+                  <div class="w-px flex-1 min-h-[8px] bg-autumn-line mb-1"></div>
+                  <span class="text-lg leading-none">🚆</span>
+                  <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+                </div>
+                <div class="flex-1 min-w-0 pb-2">
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <p class="text-sm font-medium text-autumn-ink">炭火割烹 庵 → 表参道 · 南青山</p>
+                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">14:30</span></p>
+                  </div>
+                  <p class="text-xs text-autumn-muted mt-0.5">≈ 40–50 min · Minatomirai / Toyoko → Omotesando</p>
+                  <a href="https://maps.app.goo.gl/mnxVk2d8iDcrjxxo7" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+                </div>
+              </div>
+
+              <!-- Destination: Shopping Omotesando / Minami-Aoyama -->
+              <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+                <div class="shrink-0 text-3xl leading-none pt-0.5" title="Shopping">🛍️</div>
+                <div class="flex-1 min-w-0 pr-24">
+                  <div class="absolute top-4 right-4 text-right">
+                    <p class="text-xl font-bold tracking-tight" style="color:#000099">15:30 – 19:00</p>
+                    <p class="text-xs font-medium text-autumn-muted">24 Sep</p>
+                  </div>
+                  <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Shopping · Fashion</span>
+                  <h4 class="text-base font-semibold mt-1">表参道 · 南青山</h4>
+                  <p class="text-[11px] text-autumn-muted mt-0.5">Omotesando & Minami-Aoyama boutiques</p>
+                  <a href="https://www.google.com/maps/search/Omotesando+Minami+Aoyama+shopping" target="_blank" rel="noopener" class="inline-block mt-1.5 text-sm font-medium text-autumn-ink hover:underline">Map area ↗</a>
+                </div>
+              </div>
+
+              <!-- Travel: Omotesando → Shinjuku Isetan -->
+              <div class="flex gap-3 py-3 px-1">
+                <div class="flex flex-col items-center shrink-0 w-9">
+                  <div class="w-px flex-1 min-h-[8px] bg-autumn-line mb-1"></div>
+                  <span class="text-lg leading-none">🚆</span>
+                  <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+                </div>
+                <div class="flex-1 min-w-0 pb-2">
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <p class="text-sm font-medium text-autumn-ink">表参道 → Shinjuku Isetan</p>
+                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">19:05</span></p>
+                  </div>
+                  <p class="text-xs text-autumn-muted mt-0.5">≈ 20–25 min · Ginza / Fukutoshin / Marunouchi lines</p>
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Omotesando+Station&destination=Isetan+Shinjuku&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+                </div>
+              </div>
+
+              <!-- Destination: Shinjuku Isetan -->
+              <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative flex gap-3 items-start">
+                <div class="shrink-0 text-3xl leading-none pt-0.5" title="Shopping">🛍️</div>
+                <div class="flex-1 min-w-0 pr-16">
+                  <div class="absolute top-4 right-4 text-right">
+                    <p class="text-xl font-bold tracking-tight" style="color:#000099">19:30</p>
+                    <p class="text-xs font-medium text-autumn-muted">24 Sep</p>
+                  </div>
+                  <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Shopping · Department store</span>
+                  <h4 class="text-base font-semibold mt-1">Shinjuku Isetan</h4>
+                  <a href="https://maps.app.goo.gl/yicB7YQFj9XcrQadA" target="_blank" rel="noopener" class="inline-block mt-1.5 text-sm font-medium text-autumn-ink hover:underline">Map ↗</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== 25 Sep ========== -->
+        <div id="day-content-25" class="day-content hidden">
+          <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-7">
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-autumn-line">
+              <h3 class="text-lg font-semibold tracking-tight">25 Sep</h3>
+              <span class="text-xs text-autumn-muted font-medium">Day 3 · estimated times · public transport</span>
+            </div>
+
+            <div class="space-y-0">
+
+              <!-- Travel: Shinjuku Isetan → KINO_ -->
+              <div class="flex gap-3 py-3 px-1">
+                <div class="flex flex-col items-center shrink-0 w-9">
+                  <span class="text-lg leading-none">🚆</span>
+                  <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+                </div>
+                <div class="flex-1 min-w-0 pb-2">
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <p class="text-sm font-medium text-autumn-ink">Shinjuku Isetan → KINO_</p>
+                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">11:35</span></p>
+                  </div>
+                  <p class="text-xs text-autumn-muted mt-0.5">≈ 10–15 min · walk / short transit · leave by ~11:35 to arrive 11:50</p>
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Isetan+Shinjuku&destination=KINO_+Yoyogi&travelmode=walking" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map ↗</a>
+                </div>
+              </div>
+
+              <!-- Destination: KINO_ Lunch -->
+              <div class="bg-autumn-paper border-2 border-[#800080] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+                <div class="shrink-0 text-3xl leading-none pt-0.5" title="Restaurant">🍽️</div>
+                <div class="flex-1 min-w-0 pr-16">
+                  <div class="absolute top-4 right-4 text-right">
+                    <p class="text-xl font-bold tracking-tight" style="color:#000099">12:00</p>
+                    <p class="text-xs font-medium text-autumn-muted">25 Sep</p>
+                  </div>
+                  <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Lunch</span>
+                  <h4 class="text-base font-semibold mt-1">KINO_</h4>
+                  <p class="text-[11px] text-autumn-muted mt-0.5">Yoyogi · Innovative · 90 min · 予約番号 KJ9PKLLAK6</p>
+                  <div class="flex flex-wrap gap-3 mt-1.5 text-sm">
+                    <a href="https://tabelog.com/tokyo/A1304/A130403/13285210/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Tabelog ↗</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=KINO_+%E4%BB%A3%E3%80%85%E6%9C%A8" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Travel: KINO_ → Hotel -->
+              <div class="flex gap-3 py-3 px-1">
+                <div class="flex flex-col items-center shrink-0 w-9">
+                  <div class="w-px flex-1 min-h-[8px] bg-autumn-line mb-1"></div>
+                  <span class="text-lg leading-none">🚆</span>
+                  <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+                </div>
+                <div class="flex-1 min-w-0 pb-2">
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <p class="text-sm font-medium text-autumn-ink">KINO_ → Tokyu Stay Shinjuku</p>
+                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">13:40</span></p>
+                  </div>
+                  <p class="text-xs text-autumn-muted mt-0.5">≈ 10–15 min · after 90-min lunch · back to hotel</p>
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=KINO_+Yoyogi&destination=Tokyu+Stay+Shinjuku&travelmode=walking" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map ↗</a>
+                </div>
+              </div>
+
+              <!-- Destination: Hotel -->
+              <div class="bg-autumn-paper border border-autumn-line rounded-xl p-4 relative mb-1">
+                <div class="absolute top-4 right-4 text-right">
+                  <p class="text-xl font-bold tracking-tight" style="color:#000099">14:00</p>
+                  <p class="text-xs font-medium text-autumn-muted">25 Sep</p>
+                </div>
+                <div class="pr-20">
+                  <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Arrive · Hotel</span>
+                  <h4 class="text-base font-semibold mt-1">Tokyu Stay Shinjuku</h4>
+                  <p class="text-[11px] text-autumn-muted mt-0.5">Luggage / check-out prep</p>
+                  <a href="https://maps.app.goo.gl/abBZErVGYNmASEYG6" target="_blank" rel="noopener" class="inline-block mt-1.5 text-sm font-medium text-autumn-ink hover:underline">Map ↗</a>
+                </div>
+              </div>
+
+              <!-- Travel: Hotel → HND Airport -->
+              <div class="flex gap-3 py-3 px-1">
+                <div class="flex flex-col items-center shrink-0 w-9">
+                  <div class="w-px flex-1 min-h-[8px] bg-autumn-line mb-1"></div>
+                  <span class="text-lg leading-none">🚆</span>
+                  <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+                </div>
+                <div class="flex-1 min-w-0 pb-2">
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <p class="text-sm font-medium text-autumn-ink">Tokyu Stay Shinjuku → Haneda Airport (HND)</p>
+                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">14:30</span></p>
+                  </div>
+                  <p class="text-xs text-autumn-muted mt-0.5">≈ 50–60 min · leave by ~14:30 to arrive airport ~15:30 (75 min before 16:45 flight)</p>
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Tokyu+Stay+Shinjuku&destination=Haneda+Airport+Terminal+2&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+                </div>
+              </div>
+
+              <!-- Destination: Airport -->
+              <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative flex gap-3 items-start">
+                <div class="shrink-0 text-3xl leading-none pt-0.5" title="Airport">✈️</div>
+                <div class="flex-1 min-w-0 pr-16">
+                  <div class="absolute top-4 right-4 text-right">
+                    <p class="text-xl font-bold tracking-tight" style="color:#000099">15:30</p>
+                    <p class="text-xs font-medium text-autumn-muted">25 Sep</p>
+                  </div>
+                  <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Arrive · Airport</span>
+                  <h4 class="text-base font-semibold mt-1">Haneda Airport (HND) T2</h4>
+                  <p class="text-[11px] text-autumn-muted mt-0.5">HD79 · Air Do · dep 16:45 · 75 min buffer</p>
+                  <a href="https://www.google.com/maps/search/?api=1&query=Haneda+Airport+Terminal+2" target="_blank" rel="noopener" class="inline-block mt-1.5 text-sm font-medium text-autumn-ink hover:underline">Map ↗</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ===================== WEATHER ===================== -->
+    <div id="content-weather" class="tab-content space-y-10">
+      <div class="border-b border-autumn-line pb-5">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight font-serif">Weather · Shinjuku</h2>
+            <p class="text-autumn-muted mt-1 text-sm">Live source: <a href="https://tenki.jp/forecast/3/16/4410/13104/" target="_blank" rel="noopener" class="underline hover:text-autumn-ink">tenki.jp 新宿区</a> · Trip dates 23–25 Sep · Long-range estimates update closer to date</p>
+          </div>
+          <a href="https://www.jma.go.jp/bosai/warning/#area_type=offices&area_code=130000&lang=ja&timeline_efilter=all&timeline_lfilter=all" target="_blank" rel="noopener" class="inline-block px-4 py-2.5 rounded-xl font-bold tracking-wide text-base sm:text-lg shrink-0" style="background-color:#FFCCCC; color:#C00000;">
+            JMA Weather Warning ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Trip days cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <!-- 23 Sep -->
+        <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-semibold text-lg">23 Sep</h3>
+            <span class="text-3xl" title="Partly cloudy">⛅</span>
+          </div>
+          <p class="text-sm text-autumn-muted mb-3">Partly cloudy mild</p>
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="text-3xl font-bold tracking-tight" style="color:#000099">26°</span>
+            <span class="text-lg text-autumn-muted">/ 19°</span>
+            <span class="text-xs text-autumn-muted ml-1">C</span>
+          </div>
+          <p class="text-xs text-autumn-muted mb-2">Feels like 25–27°</p>
+          <div class="flex items-center gap-2 mt-3 pt-3 border-t border-autumn-line">
+            <span class="text-sm">💧</span>
+            <span class="text-sm font-medium">Rain chance ~30%</span>
+          </div>
+        </div>
+        <!-- 24 Sep -->
+        <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-semibold text-lg">24 Sep</h3>
+            <span class="text-3xl" title="Mostly sunny">☀️</span>
+          </div>
+          <p class="text-sm text-autumn-muted mb-3">Mostly sunny mild</p>
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="text-3xl font-bold tracking-tight" style="color:#000099">27°</span>
+            <span class="text-lg text-autumn-muted">/ 19°</span>
+            <span class="text-xs text-autumn-muted ml-1">C</span>
+          </div>
+          <p class="text-xs text-autumn-muted mb-2">Feels like 26–28°</p>
+          <div class="flex items-center gap-2 mt-3 pt-3 border-t border-autumn-line">
+            <span class="text-sm">💧</span>
+            <span class="text-sm font-medium">Rain chance ~20%</span>
+          </div>
+        </div>
+        <!-- 25 Sep -->
+        <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-semibold text-lg">25 Sep</h3>
+            <span class="text-3xl" title="Partly cloudy">⛅</span>
+          </div>
+          <p class="text-sm text-autumn-muted mb-3">Partly cloudy mild</p>
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="text-3xl font-bold tracking-tight" style="color:#000099">26°</span>
+            <span class="text-lg text-autumn-muted">/ 18°</span>
+            <span class="text-xs text-autumn-muted ml-1">C</span>
+          </div>
+          <p class="text-xs text-autumn-muted mb-2">Feels like 24–26°</p>
+          <div class="flex items-center gap-2 mt-3 pt-3 border-t border-autumn-line">
+            <span class="text-sm">💧</span>
+            <span class="text-sm font-medium">Rain chance ~30%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live / current conditions note -->
+      <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+          <h3 class="font-semibold text-lg">Live now · Shinjuku</h3>
+          <a href="https://tenki.jp/forecast/3/16/4410/13104/" target="_blank" rel="noopener" class="text-xs font-medium text-autumn-ink hover:underline">Full forecast on tenki.jp ↗</a>
+        </div>
+        <div class="flex flex-wrap items-center gap-4 mb-4">
+          <span class="text-4xl">🌤️</span>
+          <div>
+            <p class="text-sm text-autumn-muted">Sunny turning cloudy · Hot</p>
+            <div class="flex items-baseline gap-2 mt-1">
+              <span class="text-3xl font-bold tracking-tight" style="color:#000099">33°</span>
+              <span class="text-lg text-autumn-muted">/ 24°</span>
+            </div>
+            <p class="text-xs text-autumn-muted mt-0.5">Feels like ~34–36° · Rain chance ~20%</p>
+          </div>
+        </div>
+
+        <!-- Next 6 hours rain chance timeline -->
+        <h4 class="text-sm font-semibold mb-3 mt-2">Next 6 hours · Chance of rain</h4>
+        <div class="grid grid-cols-6 gap-2 text-center">
+          <div class="bg-autumn-paper rounded-lg py-3 px-1">
+            <p class="text-[10px] text-autumn-muted">+0h</p>
+            <p class="text-lg font-bold mt-1" style="color:#000099">10%</p>
+          </div>
+          <div class="bg-autumn-paper rounded-lg py-3 px-1">
+            <p class="text-[10px] text-autumn-muted">+1h</p>
+            <p class="text-lg font-bold mt-1" style="color:#000099">15%</p>
+          </div>
+          <div class="bg-autumn-paper rounded-lg py-3 px-1">
+            <p class="text-[10px] text-autumn-muted">+2h</p>
+            <p class="text-lg font-bold mt-1" style="color:#000099">20%</p>
+          </div>
+          <div class="bg-autumn-paper rounded-lg py-3 px-1">
+            <p class="text-[10px] text-autumn-muted">+3h</p>
+            <p class="text-lg font-bold mt-1" style="color:#000099">20%</p>
+          </div>
+          <div class="bg-autumn-paper rounded-lg py-3 px-1">
+            <p class="text-[10px] text-autumn-muted">+4h</p>
+            <p class="text-lg font-bold mt-1" style="color:#000099">25%</p>
+          </div>
+          <div class="bg-autumn-paper rounded-lg py-3 px-1">
+            <p class="text-[10px] text-autumn-muted">+5h</p>
+            <p class="text-lg font-bold mt-1" style="color:#000099">20%</p>
+          </div>
+        </div>
+        <p class="text-[11px] text-autumn-muted mt-2">Approximate · Check tenki.jp for precise hourly updates</p>
+      </div>
+
+      <!-- Next 4 days -->
+      <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6">
+        <h3 class="font-semibold text-lg mb-4">Next 4 days outlook</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="text-center bg-autumn-paper rounded-xl p-3">
+            <p class="text-xs text-autumn-muted mb-1">21 Aug</p>
+            <span class="text-2xl block mb-1">🌦️</span>
+            <p class="text-sm font-medium">Cloudy rain</p>
+            <p class="text-base font-bold mt-1" style="color:#000099">32° / 24°</p>
+            <p class="text-xs font-medium mt-1.5 text-sky-700">Rain ~40–50%</p>
+          </div>
+          <div class="text-center bg-autumn-paper rounded-xl p-3">
+            <p class="text-xs text-autumn-muted mb-1">22 Aug</p>
+            <span class="text-2xl block mb-1">⛅</span>
+            <p class="text-sm font-medium">Cloudy sun</p>
+            <p class="text-base font-bold mt-1" style="color:#000099">32° / 24°</p>
+            <p class="text-xs font-medium mt-1.5 text-sky-700">Rain ~40%</p>
+          </div>
+          <div class="text-center bg-autumn-paper rounded-xl p-3">
+            <p class="text-xs text-autumn-muted mb-1">23 Aug</p>
+            <span class="text-2xl block mb-1">🌧️</span>
+            <p class="text-sm font-medium">Occasional rain</p>
+            <p class="text-base font-bold mt-1" style="color:#000099">32° / 24°</p>
+            <p class="text-xs font-medium mt-1.5 text-sky-700">Rain ~70%</p>
+          </div>
+          <div class="text-center bg-autumn-paper rounded-xl p-3">
+            <p class="text-xs text-autumn-muted mb-1">24 Aug</p>
+            <span class="text-2xl block mb-1">🌤️</span>
+            <p class="text-sm font-medium">Cloudy sunny</p>
+            <p class="text-base font-bold mt-1" style="color:#000099">32° / 24°</p>
+            <p class="text-xs font-medium mt-1.5 text-sky-700">Rain ~30%</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live radar -->
+      <div class="bg-autumn-card border border-autumn-line rounded-2xl p-5 sm:p-6">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <h3 class="font-semibold text-lg">Live weather radar</h3>
+          <span class="text-xs text-autumn-muted">Tokyo / Kanto · tenki.jp</span>
+        </div>
+        <p class="text-sm text-autumn-muted mb-4">Real-time rain cloud radar for the Tokyo area (Japan Meteorological Association).</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="https://tenki.jp/radar/3/16/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-autumn-ink text-autumn-paper text-sm font-semibold hover:opacity-90 transition-opacity">
+            Open live radar (Tokyo) ↗
+          </a>
+          <a href="https://tenki.jp/radar/3/16/rainmesh.html" target="_blank" rel="noopener" class="text-sm font-medium text-autumn-ink hover:underline">Forecast mesh ↗</a>
+        </div>
+        <p class="text-[11px] text-autumn-muted mt-3">tenki.jp app shows animated 15–60 min rain forecasts and lightning radar.</p>
       </div>
     </div>
 
@@ -1034,6 +1548,24 @@
             </div>
           </div>
 
+          <div class="bg-autumn-card border-2 border-[#196B24] rounded-xl p-5 flex flex-col justify-between sm:col-span-2">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <h4 class="font-semibold text-lg">Chiikawa Park</h4>
+                <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase rounded" style="background-color:#DAF2D0; color:#196B24;">Theme Park</span>
+              </div>
+              <p class="text-sm text-autumn-muted mt-1">Sunshine City Annex B1F·1F · Ikebukuro</p>
+              <p class="text-sm font-medium mt-1.5">Hours: 10:00–19:00 <span class="text-autumn-muted font-normal">(last entry 17:40 · from 1 Sep 2026)</span></p>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4 text-sm">
+              <a href="https://maps.app.goo.gl/7i4ZKuEouPxrpZZV9" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+              <a href="https://chiikawapark-tokyo.jp/zh-TW/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Event page ↗</a>
+              <a href="https://www.klook.com/zh-HK/activity/171099-chiikawa-park/?_currency=HKD" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Klook ↗</a>
+              <a href="https://www.trip.com/travel-guide/attraction/tokyo/chiikawa-park-151684484" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Trip.com ↗</a>
+              <a href="https://www.kkday.com/zh-hk/product/564564" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">KKDAY ↗</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -1181,6 +1713,23 @@
 
       // Scroll to top of main content smoothly
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function switchDay(dayId) {
+      document.querySelectorAll('.day-content').forEach(el => {
+        el.classList.add('hidden');
+      });
+      document.querySelectorAll('.day-tab').forEach(btn => {
+        btn.classList.remove('active', 'text-autumn-ink', 'border-autumn-ink');
+        btn.classList.add('text-autumn-muted', 'border-transparent');
+      });
+      const content = document.getElementById('day-content-' + dayId);
+      if (content) content.classList.remove('hidden');
+      const btn = document.getElementById('day-tab-' + dayId);
+      if (btn) {
+        btn.classList.add('active', 'text-autumn-ink', 'border-autumn-ink');
+        btn.classList.remove('text-autumn-muted', 'border-transparent');
+      }
     }
 
     // Optional: deep link support (?tab=restaurants)
