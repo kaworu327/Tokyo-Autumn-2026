@@ -60,6 +60,16 @@
       line-height: 1.2; text-decoration: none;
     }
     .tabelog-score:hover { filter: brightness(1.08); }
+    .card-time { position: absolute; top: 1rem; right: 1rem; text-align: right; }
+    @media (max-width: 639px) {
+      .card-time {
+        position: static;
+        text-align: left;
+        margin: 0 0 0.3rem 0;
+      }
+      .card-time p:first-child { font-size: 1rem !important; line-height: 1.2; }
+      .pr-16, .pr-20 { padding-right: 0 !important; }
+    }
   </style>
 </head>
 <body class="bg-autumn-paper text-autumn-ink min-h-screen font-sans flex flex-col selection:bg-autumn-accent/20">
@@ -287,7 +297,7 @@
 
             <!-- Destination: Hotel arrive 07:00 -->
             <div class="bg-autumn-paper border border-autumn-line rounded-xl p-4 relative mb-1">
-              <div class="absolute top-4 right-4 text-right">
+              <div class="card-time">
                 <p class="text-xl font-bold tracking-tight" style="color:#000099">07:00</p>
                 <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
               </div>
@@ -324,7 +334,7 @@
                 <span class="text-base">🌰</span>
               </div>
               <div class="flex-1 min-w-0 pr-16">
-                <div class="absolute top-4 right-4 text-right">
+                <div class="card-time">
                   <p class="text-xl font-bold tracking-tight" style="color:#000099">08:45 – 11:45</p>
                   <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
@@ -362,7 +372,7 @@
             <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
               <div class="shrink-0 text-3xl leading-none pt-0.5" title="Shop / rest">🛍️</div>
               <div class="flex-1 min-w-0 pr-16">
-                <div class="absolute top-4 right-4 text-right">
+                <div class="card-time">
                   <p class="text-xl font-bold tracking-tight" style="color:#000099">12:20</p>
                   <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
@@ -394,7 +404,7 @@
             <div class="bg-autumn-paper border-2 border-[#800080] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
               <div class="shrink-0 text-3xl leading-none pt-0.5" title="Restaurant">🍽️</div>
               <div class="flex-1 min-w-0 pr-16">
-                <div class="absolute top-4 right-4 text-right">
+                <div class="card-time">
                   <p class="text-xl font-bold tracking-tight" style="color:#000099">13:05</p>
                   <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
@@ -425,7 +435,7 @@
             <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
               <div class="shrink-0 text-3xl leading-none pt-0.5" title="Haircut">💇</div>
               <div class="flex-1 min-w-0 pr-24">
-                <div class="absolute top-4 right-4 text-right">
+                <div class="card-time">
                   <p class="text-xl font-bold tracking-tight" style="color:#000099">15:30 – 17:30</p>
                   <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
@@ -459,7 +469,7 @@
             <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
               <div class="shrink-0 text-3xl leading-none pt-0.5" title="Shopping">🛍️</div>
               <div class="flex-1 min-w-0 pr-24">
-                <div class="absolute top-4 right-4 text-right">
+                <div class="card-time">
                   <p class="text-xl font-bold tracking-tight" style="color:#000099">18:00 – 20:00</p>
                   <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
@@ -490,7 +500,7 @@
             <div class="bg-autumn-paper border-2 border-[#800080] rounded-xl p-4 relative flex gap-3 items-start">
               <div class="shrink-0 text-3xl leading-none pt-0.5" title="Restaurant">🍽️</div>
               <div class="flex-1 min-w-0 pr-16">
-                <div class="absolute top-4 right-4 text-right">
+                <div class="card-time">
                   <p class="text-xl font-bold tracking-tight" style="color:#000099">20:30</p>
                   <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
@@ -534,7 +544,7 @@
               <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
                 <div class="shrink-0 text-3xl leading-none pt-0.5" title="Exhibition">🎨</div>
                 <div class="flex-1 min-w-0 pr-16">
-                  <div class="absolute top-4 right-4 text-right">
+                  <div class="card-time">
                     <p class="text-xl font-bold tracking-tight" style="color:#000099">10:00</p>
                     <p class="text-xs font-medium text-autumn-muted">24 Sep</p>
                   </div>
@@ -572,7 +582,7 @@
               <div class="bg-autumn-paper border-2 border-[#800080] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
                 <div class="shrink-0 text-3xl leading-none pt-0.5" title="Restaurant">🍽️</div>
                 <div class="flex-1 min-w-0 pr-16">
-                  <div class="absolute top-4 right-4 text-right">
+                  <div class="card-time">
                     <p class="text-xl font-bold tracking-tight" style="color:#000099">13:00</p>
                     <p class="text-xs font-medium text-autumn-muted">24 Sep</p>
                   </div>
@@ -607,7 +617,7 @@
               <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
                 <div class="shrink-0 text-3xl leading-none pt-0.5" title="Shopping">🛍️</div>
                 <div class="flex-1 min-w-0 pr-24">
-                  <div class="absolute top-4 right-4 text-right">
+                  <div class="card-time">
                     <p class="text-xl font-bold tracking-tight" style="color:#000099">15:30 – 19:00</p>
                     <p class="text-xs font-medium text-autumn-muted">24 Sep</p>
                   </div>
@@ -639,7 +649,7 @@
               <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative flex gap-3 items-start">
                 <div class="shrink-0 text-3xl leading-none pt-0.5" title="Shopping">🛍️</div>
                 <div class="flex-1 min-w-0 pr-16">
-                  <div class="absolute top-4 right-4 text-right">
+                  <div class="card-time">
                     <p class="text-xl font-bold tracking-tight" style="color:#000099">19:30</p>
                     <p class="text-xs font-medium text-autumn-muted">24 Sep</p>
                   </div>
@@ -683,7 +693,7 @@
               <div class="bg-autumn-paper border-2 border-[#800080] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
                 <div class="shrink-0 text-3xl leading-none pt-0.5" title="Restaurant">🍽️</div>
                 <div class="flex-1 min-w-0 pr-16">
-                  <div class="absolute top-4 right-4 text-right">
+                  <div class="card-time">
                     <p class="text-xl font-bold tracking-tight" style="color:#000099">12:00</p>
                     <p class="text-xs font-medium text-autumn-muted">25 Sep</p>
                   </div>
@@ -716,7 +726,7 @@
 
               <!-- Destination: Hotel -->
               <div class="bg-autumn-paper border border-autumn-line rounded-xl p-4 relative mb-1">
-                <div class="absolute top-4 right-4 text-right">
+                <div class="card-time">
                   <p class="text-xl font-bold tracking-tight" style="color:#000099">14:00</p>
                   <p class="text-xs font-medium text-autumn-muted">25 Sep</p>
                 </div>
@@ -749,7 +759,7 @@
               <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative flex gap-3 items-start">
                 <div class="shrink-0 text-3xl leading-none pt-0.5" title="Airport">✈️</div>
                 <div class="flex-1 min-w-0 pr-16">
-                  <div class="absolute top-4 right-4 text-right">
+                  <div class="card-time">
                     <p class="text-xl font-bold tracking-tight" style="color:#000099">15:30</p>
                     <p class="text-xs font-medium text-autumn-muted">25 Sep</p>
                   </div>
@@ -1941,21 +1951,30 @@
         return get('hour') + ':' + get('minute') + ' ' + get('day') + '/' + get('month');
       }
       try {
+        const bust = Date.now();
+        const sources = [
+          {
+            url: 'https://open.er-api.com/v6/latest/JPY?_=' + bust,
+            pick: d => d && d.rates && d.rates.HKD
+          },
+          {
+            url: 'https://api.frankfurter.dev/v1/latest?from=JPY&to=HKD&_=' + bust,
+            pick: d => d && d.rates && d.rates.HKD
+          },
+          {
+            url: 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/jpy.min.json?_=' + bust,
+            pick: d => d && d.jpy && d.jpy.hkd
+          }
+        ];
         let hkdPerJpy = null;
-        try {
-          const r1 = await fetch('https://api.frankfurter.app/latest?from=JPY&to=HKD');
-          if (r1.ok) {
-            const d1 = await r1.json();
-            if (d1 && d1.rates && d1.rates.HKD) hkdPerJpy = Number(d1.rates.HKD);
-          }
-        } catch (e) {}
-        if (hkdPerJpy == null) {
-          const r2 = await fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/jpy.json');
-          if (r2.ok) {
-            const d2 = await r2.json();
-            const v = d2 && d2.jpy && d2.jpy.hkd;
-            if (v != null) hkdPerJpy = Number(v);
-          }
+        for (let i = 0; i < sources.length; i++) {
+          try {
+            const res = await fetch(sources[i].url, { cache: 'no-store', mode: 'cors' });
+            if (!res.ok) continue;
+            const data = await res.json();
+            const v = Number(sources[i].pick(data));
+            if (!Number.isNaN(v) && v > 0) { hkdPerJpy = v; break; }
+          } catch (e) {}
         }
         if (hkdPerJpy == null || Number.isNaN(hkdPerJpy)) throw new Error('no rate');
         window.fxHkdPerJpy = hkdPerJpy;
