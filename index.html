@@ -133,6 +133,9 @@
       <button onclick="switchTab('brands')" id="tab-brands" class="tab-btn px-4 sm:px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide border-b-2 border-transparent text-autumn-muted hover:text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
         Brands
       </button>
+      <button onclick="switchTab('chiikawa')" id="tab-chiikawa" class="tab-btn px-4 sm:px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide border-b-2 border-transparent text-autumn-muted hover:text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
+        Chiikawa and JB
+      </button>
       <button onclick="switchTab('size')" id="tab-size" class="tab-btn px-4 sm:px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide border-b-2 border-transparent text-autumn-muted hover:text-autumn-ink focus:outline-none whitespace-nowrap transition-colors">
         Size guide
       </button>
@@ -408,7 +411,10 @@
                   <p class="text-xl font-bold tracking-tight" style="color:#000099">13:05</p>
                   <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
-                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Lunch</span>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Lunch</span>
+                  <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-green-100 text-green-700 rounded">BOOKED</span>
+                </div>
                 <div class="flex items-center gap-2 mt-1 pr-16">
                   <h4 class="text-base font-semibold">LA BETTOLA da Ochiai</h4>
                   <a href="https://tabelog.com/tokyo/A1313/A131301/13002504/" target="_blank" rel="noopener" class="inline-flex flex-col items-center leading-tight no-underline shrink-0" title="Tabelog"><span class="tabelog-score">3.69</span><span class="text-[10px] font-bold text-autumn-muted mt-0.5">tabelog ↗</span></a>
@@ -508,7 +514,10 @@
                   <p class="text-xl font-bold tracking-tight" style="color:#000099">20:30</p>
                   <p class="text-xs font-medium text-autumn-muted">23 Sep</p>
                 </div>
-                <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Dinner</span>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Dinner</span>
+                  <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-green-100 text-green-700 rounded">BOOKED</span>
+                </div>
                 <div class="flex items-center gap-2 mt-1 pr-16">
                   <h4 class="text-base font-semibold">焼肉ヒロミヤ 四谷4号店</h4>
                   <a href="https://tabelog.com/tokyo/A1309/A130903/13257352/" target="_blank" rel="noopener" class="inline-flex flex-col items-center leading-tight no-underline shrink-0" title="Tabelog"><span class="tabelog-score">3.62</span><span class="text-[10px] font-bold text-autumn-muted mt-0.5">tabelog ↗</span></a>
@@ -593,7 +602,10 @@
                     <p class="text-xl font-bold tracking-tight" style="color:#000099">13:00</p>
                     <p class="text-xs font-medium text-autumn-muted">24 Sep</p>
                   </div>
-                  <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Lunch</span>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Lunch</span>
+                    <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-green-100 text-green-700 rounded">BOOKED</span>
+                  </div>
                   <div class="flex items-center gap-2 mt-1 pr-16">
                     <h4 class="text-base font-semibold">炭火割烹 庵</h4>
                     <a href="https://tabelog.com/kanagawa/A1401/A140104/14079044/" target="_blank" rel="noopener" class="inline-flex flex-col items-center leading-tight no-underline shrink-0" title="Tabelog"><span class="tabelog-score">3.78</span><span class="text-[10px] font-bold text-autumn-muted mt-0.5">tabelog ↗</span></a>
@@ -680,7 +692,65 @@
 
             <div class="space-y-0">
 
-              <!-- Travel: Shinjuku Isetan → KINO_ -->
+              <!-- Optional: Hotel → らぁ麺や 嶋 -->
+              <div class="flex gap-3 py-3 px-1" style="border:1.5px dotted #8A7E6F; border-radius:0.75rem; margin-bottom:0.35rem;">
+                <div class="flex flex-col items-center shrink-0 w-9">
+                  <span class="text-lg leading-none">🚆</span>
+                  <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+                </div>
+                <div class="flex-1 min-w-0 pb-2">
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <p class="text-sm font-medium text-autumn-ink">Tokyu Stay Shinjuku → らぁ麺や 嶋 <span class="text-[10px] uppercase tracking-wider font-bold text-autumn-muted">Optional</span></p>
+                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">10:00</span></p>
+                  </div>
+                  <p class="text-xs text-autumn-muted mt-0.5">≈ 20 min + 10 min buffer · 西新宿五丁目 · leave 10:00 to arrive 10:30</p>
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Tokyu+Stay+Shinjuku&destination=%E3%82%89%E3%81%81%E9%BA%BA%E3%82%84+%E5%B6%8B&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+                </div>
+              </div>
+
+              <!-- Optional: らぁ麺や 嶋 -->
+              <div class="bg-autumn-paper border-2 border-dashed border-[#800080] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+                <div class="shrink-0 text-3xl leading-none pt-0.5" title="Restaurant">🍜</div>
+                <div class="flex-1 min-w-0 pr-16">
+                  <div class="card-time">
+                    <p class="text-xl font-bold tracking-tight" style="color:#000099">10:30 – 11:00</p>
+                    <p class="text-[11px] font-medium text-autumn-muted">30 min</p>
+                    <p class="text-xs font-medium text-autumn-muted">25 Sep</p>
+                  </div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Lunch</span>
+                    <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase rounded" style="background:#FBE2D5; color:#C65911; border:1.5px solid #BE5014">Optional</span>
+                  </div>
+                  <div class="flex items-center gap-2 mt-1 pr-16">
+                    <h4 class="text-base font-semibold">らぁ麺や 嶋</h4>
+                    <a href="https://tabelog.com/tokyo/A1304/A130401/13247487/" target="_blank" rel="noopener" class="inline-flex flex-col items-center leading-tight no-underline shrink-0" title="Tabelog"><span class="tabelog-score">4.06</span><span class="text-[10px] font-bold text-autumn-muted mt-0.5">tabelog ↗</span></a>
+                  </div>
+                  <p class="text-[11px] text-autumn-muted mt-0.5">西新宿五丁目 · weekday only · 10:30 entry slot</p>
+                  <div class="flex flex-wrap gap-3 mt-1.5 text-sm">
+                    <a href="https://maps.app.goo.gl/DJLrzkb8A6BBGoc7A" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                    <a href="https://www.tablecheck.com/ja/shops/ramenya-shima/reserve" target="_blank" rel="noopener" class="inline-block px-2 py-0.5 rounded font-medium text-autumn-ink hover:underline" style="border:1.5px solid #BE5014">Booking open: <strong class="px-1 rounded" style="background-color:#FBE2D5">0800 LT</strong> <strong>of prior day</strong> ↗</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Optional: 嶋 → Chiikawa Park -->
+              <div class="flex gap-3 py-3 px-1" style="border:1.5px dotted #8A7E6F; border-radius:0.75rem; margin-bottom:0.35rem;">
+                <div class="flex flex-col items-center shrink-0 w-9">
+                  <div class="w-px flex-1 min-h-[8px] bg-autumn-line mb-1"></div>
+                  <span class="text-lg leading-none">🚆</span>
+                  <div class="w-px flex-1 min-h-[12px] bg-autumn-line mt-1"></div>
+                </div>
+                <div class="flex-1 min-w-0 pb-2">
+                  <div class="flex flex-wrap items-baseline justify-between gap-2">
+                    <p class="text-sm font-medium text-autumn-ink">らぁ麺や 嶋 → Chiikawa Park <span class="text-[10px] uppercase tracking-wider font-bold text-autumn-muted">Optional path</span></p>
+                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">11:00</span></p>
+                  </div>
+                  <p class="text-xs text-autumn-muted mt-0.5">≈ 30 min + 10 min buffer · leave 11:00 to arrive park 11:40</p>
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=%E3%82%89%E3%81%81%E9%BA%BA%E3%82%84+%E5%B6%8B&destination=Chiikawa+Park+Sunshine+City&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
+                </div>
+              </div>
+
+              <!-- Travel: Hotel → Chiikawa Park (skip optional ramen) -->
               <div class="flex gap-3 py-3 px-1">
                 <div class="flex flex-col items-center shrink-0 w-9">
                   <span class="text-lg leading-none">🚆</span>
@@ -688,33 +758,39 @@
                 </div>
                 <div class="flex-1 min-w-0 pb-2">
                   <div class="flex flex-wrap items-baseline justify-between gap-2">
-                    <p class="text-sm font-medium text-autumn-ink">Shinjuku Isetan → KINO_</p>
-                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">11:35</span></p>
+                    <p class="text-sm font-medium text-autumn-ink">Tokyu Stay Shinjuku → Chiikawa Park</p>
+                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">11:10</span></p>
                   </div>
-                  <p class="text-xs text-autumn-muted mt-0.5">≈ 10–15 min · walk / short transit · leave by ~11:35 to arrive 11:50</p>
-                  <a href="https://www.google.com/maps/dir/?api=1&origin=Isetan+Shinjuku&destination=KINO_+Yoyogi&travelmode=walking" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map ↗</a>
+                  <p class="text-xs text-autumn-muted mt-0.5">≈ 30 min · if skipping 嶋 · Yamanote Shinjuku → Ikebukuro · leave by 11:10 to arrive 11:40</p>
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Tokyu+Stay+Shinjuku&destination=Chiikawa+Park+Sunshine+City&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
                 </div>
               </div>
 
-              <!-- Destination: KINO_ Lunch -->
-              <div class="bg-autumn-paper border-2 border-[#800080] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
-                <div class="shrink-0 text-3xl leading-none pt-0.5" title="Restaurant">🍽️</div>
+              <!-- Destination: Chiikawa Park Halloween Special -->
+              <div class="bg-autumn-paper border-2 border-[#C00000] rounded-xl p-4 relative mb-1 flex gap-3 items-start">
+                <div class="shrink-0 text-3xl leading-none pt-0.5" title="Chiikawa Park">🎃</div>
                 <div class="flex-1 min-w-0 pr-16">
                   <div class="card-time">
-                    <p class="text-xl font-bold tracking-tight" style="color:#000099">12:00</p>
+                    <p class="text-xl font-bold tracking-tight" style="color:#000099">11:40 – 13:30</p>
+                    <p class="text-[11px] font-medium text-autumn-muted">110 min</p>
                     <p class="text-xs font-medium text-autumn-muted">25 Sep</p>
                   </div>
-                  <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Dining · Lunch</span>
-                  <div class="flex items-center gap-2 mt-1 pr-16">
-                    <h4 class="text-base font-semibold">KINO_</h4>
-                    <a href="https://tabelog.com/tokyo/A1304/A130403/13285210/" target="_blank" rel="noopener" class="inline-flex flex-col items-center leading-tight no-underline shrink-0" title="Tabelog"><span class="tabelog-score">4.02</span><span class="text-[10px] font-bold text-autumn-muted mt-0.5">tabelog ↗</span></a>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Event · Theme Park</span>
+                    <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-green-100 text-green-700 rounded">BOOKED</span>
                   </div>
-                  <p class="text-[11px] text-autumn-muted mt-0.5">Yoyogi · Innovative · 90 min · 予約番号 KJ9PKLLAK6</p>
-                  <a href="https://maps.app.goo.gl/7uAxUR7qFeEhqM257" target="_blank" rel="noopener" class="inline-block mt-1.5 text-sm font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  <h4 class="text-base font-semibold">Chiikawa Park Halloween Special</h4>
+                  <p class="text-[11px] text-autumn-muted mt-0.5">Sunshine City Annex · Ikebukuro · last entry 17:40</p>
+                  <p class="inline-block mt-1.5 px-2 py-0.5 text-[11px] font-bold rounded" style="background:#FBE2D5; color:#C65911; border:1.5px solid #BE5014">Booked via Klook App</p>
+                  <div class="flex flex-wrap gap-3 mt-1.5 text-sm">
+                    <a href="https://maps.app.goo.gl/7i4ZKuEouPxrpZZV9" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                    <a href="https://chiikawapark-tokyo.jp/zh-TW/" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Event page ↗</a>
+                    <a href="https://prtimes.jp/main/html/rd/p/000000141.000074811.html" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Halloween Special ↗</a>
+                  </div>
                 </div>
               </div>
 
-              <!-- Travel: KINO_ → Hotel -->
+              <!-- Travel: Chiikawa Park → Hotel -->
               <div class="flex gap-3 py-3 px-1">
                 <div class="flex flex-col items-center shrink-0 w-9">
                   <div class="w-px flex-1 min-h-[8px] bg-autumn-line mb-1"></div>
@@ -723,11 +799,11 @@
                 </div>
                 <div class="flex-1 min-w-0 pb-2">
                   <div class="flex flex-wrap items-baseline justify-between gap-2">
-                    <p class="text-sm font-medium text-autumn-ink">KINO_ → Tokyu Stay Shinjuku</p>
-                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">13:40</span></p>
+                    <p class="text-sm font-medium text-autumn-ink">Chiikawa Park → Tokyu Stay Shinjuku</p>
+                    <p class="text-sm font-bold text-autumn-ink">Dep ≈ <span class="text-xl font-bold tracking-tight" style="color:#000099">13:30</span></p>
                   </div>
-                  <p class="text-xs text-autumn-muted mt-0.5">≈ 10–15 min · after 90-min lunch · back to hotel</p>
-                  <a href="https://www.google.com/maps/dir/?api=1&origin=KINO_+Yoyogi&destination=Tokyu+Stay+Shinjuku&travelmode=walking" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map ↗</a>
+                  <p class="text-xs text-autumn-muted mt-0.5">≈ 30 min · Yamanote Ikebukuro → Shinjuku · leave by 13:30 to arrive hotel 14:00</p>
+                  <a href="https://www.google.com/maps/dir/?api=1&origin=Chiikawa+Park+Sunshine+City&destination=Tokyu+Stay+Shinjuku&travelmode=transit" target="_blank" rel="noopener" class="inline-block mt-1 text-xs font-medium text-autumn-ink hover:underline">Route map (transit) ↗</a>
                 </div>
               </div>
 
@@ -921,7 +997,7 @@
           <div class="bg-autumn-card border-2 border-orange-400 rounded-2xl p-6 sm:p-7">
             <div class="flex justify-between items-start mb-5">
               <span class="text-[11px] tracking-wider uppercase font-bold text-autumn-muted">Ramen</span>
-              <span class="px-2 py-0.5 text-xs font-bold bg-orange-100 text-orange-700 rounded">3.77–4.07 ★</span>
+              <span class="px-2 py-0.5 text-xs font-bold bg-orange-100 text-orange-700 rounded">3.68–4.07 ★</span>
             </div>
 
             <div class="space-y-6">
@@ -951,21 +1027,8 @@
                 </div>
               </div>
 
-              <!-- RAMEN MATSUI -->
-              <div class="pb-5 border-b border-autumn-line/70">
-                <div class="flex items-start justify-between gap-3 mb-1">
-                  <h3 class="text-lg font-semibold">RAMEN MATSUI</h3>
-                  <a href="https://tabelog.com/tokyo/A1304/A130402/13285098/" target="_blank" rel="noopener" class="inline-flex flex-col items-center leading-tight no-underline shrink-0" title="Tabelog"><span class="tabelog-score">3.82</span><span class="text-[10px] font-bold text-autumn-muted mt-0.5">tabelog ↗</span></a>
-                </div>
-                <p class="text-sm text-autumn-muted mb-2">Elegant clear broth · hyper-precise presentation.</p>
-                <div class="flex flex-wrap gap-3 text-sm">
-                  <a href="https://maps.app.goo.gl/eAayEV9dsENtdSLEA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
-                  <a href="https://www.tablecheck.com/zh-TW/shops/ramen-matsui/reserve" target="_blank" rel="noopener" class="inline-block px-2 py-0.5 rounded font-medium text-autumn-ink hover:underline" style="border:1.5px solid #BE5014">Booking open: <strong class="px-1 rounded" style="background-color:#FBE2D5">1200 LT</strong> <strong>of 3 prior days</strong> (eg: Wed → Sat), Fee: 500 Yen ↗</a>
-                </div>
-              </div>
-
               <!-- 麵屋周鄉 -->
-              <div>
+              <div class="pb-5 border-b border-autumn-line/70">
                 <div class="flex items-start justify-between gap-3 mb-1">
                   <h3 class="text-lg font-semibold">麵屋周鄉</h3>
                   <a href="https://tabelog.com/tokyo/A1301/A130103/13260478/" target="_blank" rel="noopener" class="inline-flex flex-col items-center leading-tight no-underline shrink-0" title="Tabelog"><span class="tabelog-score">3.77</span><span class="text-[10px] font-bold text-autumn-muted mt-0.5">tabelog ↗</span></a>
@@ -973,6 +1036,75 @@
                 <p class="text-sm text-autumn-muted mb-2">Deeply layered tsukemen · Ginza / Shimbashi area.</p>
                 <div class="flex flex-wrap gap-3 text-sm">
                   <a href="https://maps.app.goo.gl/BNbuuuHh5nc5SEzWA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                </div>
+              </div>
+
+              <!-- Shinjuku Area group -->
+              <div class="p-4 rounded-xl mb-1" style="border:1.5px solid #BE5014; background:#FCE4D6;">
+                <p class="text-sm font-bold tracking-wide mb-4" style="color:#C65911">Shinjuku Area</p>
+                <div class="space-y-6">
+
+              <div class="pb-5 border-b border-[#BE5014]/30">
+                <div class="flex items-start justify-between gap-3 mb-1">
+                  <h3 class="text-lg font-semibold">RAMEN MATSUI</h3>
+                  <a href="https://tabelog.com/tokyo/A1304/A130402/13285098/" target="_blank" rel="noopener" class="inline-flex flex-col items-center leading-tight no-underline shrink-0" title="Tabelog"><span class="tabelog-score">3.82</span><span class="text-[10px] font-bold text-autumn-muted mt-0.5">tabelog ↗</span></a>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">Elegant clear broth · hyper-precise presentation.</p>
+                <p class="text-sm font-medium mb-2">Open 11-15:30. Close on Wed, Thu</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://maps.app.goo.gl/eAayEV9dsENtdSLEA" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                  <a href="https://www.tablecheck.com/zh-TW/shops/ramen-matsui/reserve" target="_blank" rel="noopener" class="inline-block px-2 py-0.5 rounded font-medium text-autumn-ink hover:underline" style="border:1.5px solid #BE5014">Booking open: <strong class="px-1 rounded" style="background-color:#FBE2D5">1200 LT</strong> <strong>of 3 prior days</strong> (eg: Wed → Sat), Fee: 500 Yen ↗</a>
+                </div>
+              </div>
+
+              <div class="pb-5 border-b border-[#BE5014]/30">
+                <div class="flex items-start justify-between gap-3 mb-1">
+                  <h3 class="text-lg font-semibold">支那蕎麦 澤田</h3>
+                  <a href="https://tabelog.com/tokyo/A1304/A130402/13257218/" target="_blank" rel="noopener" class="inline-flex flex-col items-center leading-tight no-underline shrink-0" title="Tabelog"><span class="tabelog-score">3.76</span><span class="text-[10px] font-bold text-autumn-muted mt-0.5">tabelog ↗</span></a>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">新宿御苑前 · shoyu / tsukemen.</p>
+                <p class="text-sm font-medium mb-2">Open 11-15, 17-20:30. Close on Sun</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://www.google.com/maps/search/?api=1&query=%E6%94%AF%E9%82%A3%E8%95%8E%E9%BA%A6+%E6%BE%A4%E7%94%B0+%E6%96%B0%E5%AE%BF1-12-1" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                </div>
+              </div>
+
+              <div class="pb-5 border-b border-[#BE5014]/30">
+                <div class="flex items-start justify-between gap-3 mb-1">
+                  <h3 class="text-lg font-semibold">麺屋海神 新宿店（めんやかいじん）</h3>
+                  <a href="https://tabelog.com/tokyo/A1304/A130401/13045287/" target="_blank" rel="noopener" class="inline-flex flex-col items-center leading-tight no-underline shrink-0" title="Tabelog"><span class="tabelog-score">3.73</span><span class="text-[10px] font-bold text-autumn-muted mt-0.5">tabelog ↗</span></a>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">新宿東南口 · grilled-fish ara shio ramen.</p>
+                <p class="text-sm font-medium mb-2">Open 11-15, 16:30-23:30. Close irregular</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://www.google.com/maps/search/?api=1&query=%E9%BA%BA%E5%B1%8B%E6%B5%B7%E7%A5%9E+%E6%96%B0%E5%AE%BF%E5%BA%97" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                </div>
+              </div>
+
+              <div class="pb-5 border-b border-[#BE5014]/30">
+                <div class="flex items-start justify-between gap-3 mb-1">
+                  <h3 class="text-lg font-semibold">煮干中華そば 鈴蘭（すずらん）</h3>
+                  <a href="https://tabelog.com/tokyo/A1304/A130401/13141542/" target="_blank" rel="noopener" class="inline-flex flex-col items-center leading-tight no-underline shrink-0" title="Tabelog"><span class="tabelog-score">3.71</span><span class="text-[10px] font-bold text-autumn-muted mt-0.5">tabelog ↗</span></a>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">新宿三丁目 · rich niboshi.</p>
+                <p class="text-sm font-medium mb-2">Open 11-23. Close none</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://www.google.com/maps/search/?api=1&query=%E7%85%AE%E5%B9%B2%E4%B8%AD%E8%8F%AF%E3%81%9D%E3%81%B0+%E9%88%B4%E8%98%AD+%E6%96%B0%E5%AE%BF3-11-12" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex items-start justify-between gap-3 mb-1">
+                  <h3 class="text-lg font-semibold">百日紅（さるすべり）</h3>
+                  <a href="https://tabelog.com/tokyo/A1304/A130401/13116353/" target="_blank" rel="noopener" class="inline-flex flex-col items-center leading-tight no-underline shrink-0" title="Tabelog"><span class="tabelog-score">3.68</span><span class="text-[10px] font-bold text-autumn-muted mt-0.5">tabelog ↗</span></a>
+                </div>
+                <p class="text-sm text-autumn-muted mb-2">新宿三丁目 Keio Frente B2 · niboshi tsukemen.</p>
+                <p class="text-sm font-medium mb-2">Open 07-23, Sat/Sun 11-23</p>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <a href="https://www.google.com/maps/search/?api=1&query=%E7%99%BE%E6%97%A5%E7%B4%85+%E3%81%95%E3%82%8B%E3%81%99%E3%81%B9%E3%82%8A+%E4%BA%AC%E7%8E%8B%E3%83%95%E3%83%AC%E3%83%B3%E3%83%86%E6%96%B0%E5%AE%BF%E4%B8%89%E4%B8%81%E7%9B%AE" target="_blank" rel="noopener" class="font-medium text-autumn-ink hover:underline">Map ↗</a>
+                </div>
+              </div>
+
                 </div>
               </div>
             </div>
@@ -1635,12 +1767,15 @@
         </div>
       </div>
 
-      <!-- Chiikawa & JB -->
+    </div>
+
+    <!-- ===================== CHIIKAWA AND JB ===================== -->
+    <div id="content-chiikawa" class="tab-content space-y-10">
+      <div class="border-b border-autumn-line pb-5">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight font-serif">Chiikawa and JB</h2>
+        <p class="text-autumn-muted mt-1 text-sm">Stores · events · theme park</p>
+      </div>
       <div>
-        <h3 class="text-xs font-bold uppercase tracking-widest text-autumn-muted mb-5 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-autumn-muted"></span>
-          Chiikawa &amp; JB
-        </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
           <div class="bg-autumn-card border border-autumn-line rounded-xl p-5 flex flex-col justify-between">
